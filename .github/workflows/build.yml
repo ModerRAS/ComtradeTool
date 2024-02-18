@@ -29,8 +29,9 @@ jobs:
 
       - name: Build MSIX package
         run: |
-          "& 'C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe' pack /d dist /p ComtradeTool.msix"
-          # Adjust the path to makeappx.exe based on your Windows Kits version
+          & 'C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe' pack /d dist /p ComtradeTool.msix
+        shell: pwsh
+
 
       - name: Upload MSIX artifact
         uses: actions/upload-artifact@v2
