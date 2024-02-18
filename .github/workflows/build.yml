@@ -1,0 +1,40 @@
+name: Build MSIX
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller msix-packaging
+
+      - name: Build MSIX package
+        run: |
+          pyinstaller --onefile your_script.py
+          # Replace "your_script.py" with the name of your main Python script
+      - name: Build MSIX package
+        run: |
+          msix-packaging -o output_directory -n ComtradeTool -p ComtradeTool -v 1.0.0 -a "x64" -d "Description of your app" -s "ComtradeTool.appx" -m "main.py"
+          # Replace the placeholders with your actual app name, version, and description
+
+      - name: Upload MSIX artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: msix-package
+          path: output_directory/ComtradeTool.msix
+          # Replace "ComtradeTool.msix" with the name of the generated MSIX package
