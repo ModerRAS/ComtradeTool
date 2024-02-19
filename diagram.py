@@ -229,7 +229,7 @@ def convert_data_to_csv_style(dataname, data):
         "data": transposed_rows
     }
 def save_to_csv(data, csv_file_path):
-    with open(csv_file_path, mode='w', newline='') as file:
+    with open(csv_file_path, mode='w', encoding='gbk', newline='') as file:
         for i in data:
             writer = csv.DictWriter(file, fieldnames=['name'] + [row['name'] for row in i["rows"]])
             writer.writerow({"name": i["dataname"]})
@@ -241,7 +241,7 @@ def save_to_csv(data, csv_file_path):
     print(f"CSV 文件已保存至 {csv_file_path}")
 
 def convert_data_to_csv_2(data, csv_file_path):
-    with open(csv_file_path, mode='w', newline='') as file:
+    with open(csv_file_path, mode='w', encoding='gbk', newline='') as file:
         writer = csv.writer(file)
         for item in data:
             writer.writerow([item['name']])
