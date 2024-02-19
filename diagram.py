@@ -1,7 +1,9 @@
 # import matplotlib.pyplot as plt
+import chardet
 from comtrade import Comtrade
 import csv
 import os
+import codecs
 
 直流场电流模拟量 = [
     "IDEL1",
@@ -51,6 +53,26 @@ import os
     "CPR22A",
     "CPR22B",
     "CPR22C",
+    "PPR1A",
+    "PPR1B",
+    "PPR1C",
+    "PPR2A",
+    "PPR2B",
+    "PPR2C"
+]
+
+
+直流场电压模拟量_PCP_CCP = [
+    "UDL_IN",
+    "UDM_IN",
+    "UDN_IN",
+]
+
+直流场电压模拟量_PCP_CCP_字段名 = [
+    "PCP1A",
+    "PCP1B",
+    "PCP2A",
+    "PCP2B",
     "CCP11A",
     "CCP11B",
     "CCP12A",
@@ -59,26 +81,6 @@ import os
     "CCP21B",
     "CCP22A",
     "CCP22B",
-    "PCP1A",
-    "PCP1B",
-    "PCP2A",
-    "PCP2B"
-]
-
-
-直流场电压模拟量_PPR = [
-    "UDL_IN",
-    "UDM_IN",
-    "UDN_IN",
-]
-
-直流场电压模拟量_PPR_字段名 = [
-    "PPR1A",
-    "PPR1B",
-    "PPR1C",
-    "PPR2A",
-    "PPR2B",
-    "PPR2C"
 ]
 
 换流变模拟量 = [
@@ -116,12 +118,34 @@ def get_max(analog):
     else:
         return min(analog)
 
+def transform(des_file, res_file):
+    '''
+    将文件编码从 GBK 转换成 utf8
+    :param des_file: 待转换的编码为 GBK 的源文件
+    :param res_file: 转换之后的 utf8 编码的文件
+    :return: 
+    '''
+    with open(des_file, 'rb') as f:
+        data = f.read()
+    res = chardet.detect(data)
+    if res['encoding'] == 'GB2312':
+        res['encoding'] = 'GBK'
+    with open(res_file, 'w', encoding='utf-8') as file:
+        line = str(data, encoding=res['encoding'])
+        file.write(line)
+    print(line)
 
 def load_diagram(file_header: str):
     cfgFile = file_header + ".CFG"
     datFile = file_header + ".DAT"
     rec = Comtrade()
-    rec.load(cfgFile, datFile)
+    try:
+        rec.load(cfgFile, datFile)
+    except UnicodeDecodeError as e:
+        ocfgfile = cfgFile + "utf8"
+        transform(cfgFile,ocfgfile)
+
+        rec.load(ocfgfile, datFile)
     return rec
 
 
@@ -132,11 +156,11 @@ def get_analog(rec: Comtrade, use_analog_list: list[str]):
     # 循环获取模拟通道的名称
     for i in range(analog_count):
         chan = rec.analog_channel_ids[i]
-    if chan in use_analog_list:
-        analog_list.append({
-            "name": chan,
-            "id": i
-        })
+        if chan in use_analog_list:
+            analog_list.append({
+                "name": chan,
+                "id": i
+            })
     output_analog = []
     # 循环输出81个模拟量通道的采集数据
     for use_analog in analog_list:
@@ -159,10 +183,10 @@ def filter_files(directory, keywords):
     return files
 
 def get_analog_from_file(filepath):
-    def _get_analog_from_file(字段, 量):
+    def _get_analog_from_file(字段, 量, Child="Child0"):
         data_list = []
         for i in 字段:
-            files = filter_files(filepath, [get_filename_keyword(i), "Child0"])
+            files = filter_files(filepath, [get_filename_keyword(i), Child])
             if len(files) <= 0:
                 log_list.append("cannot find {}".format(i))
                 continue
@@ -182,8 +206,8 @@ def find_diagram(filepath: str):
     func_get_analog_from_file = get_analog_from_file(filepath)
     直流场电流 = func_get_analog_from_file(直流场电流模拟量_字段名, 直流场电流模拟量)
     直流场电压 = func_get_analog_from_file(直流场电压模拟量_字段名, 直流场电压模拟量)
-    直流场电压_PPR = func_get_analog_from_file(直流场电压模拟量_PPR_字段名, 直流场电压模拟量_PPR)
-    换流变 = func_get_analog_from_file(换流变模拟量_字段名, 换流变模拟量)
+    直流场电压_PCP_CCP = func_get_analog_from_file(直流场电压模拟量_PCP_CCP_字段名, 直流场电压模拟量_PCP_CCP)
+    换流变 = func_get_analog_from_file(换流变模拟量_字段名, 换流变模拟量, Child="Child2")
 
     pass
 
