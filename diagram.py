@@ -200,8 +200,7 @@ def get_analog_from_file(filepath):
         return data_list
 
     return _get_analog_from_file
-
-def convert_data_to_csv(data, csv_file_path):
+def convert_data_to_csv_style(dataname, data):
     all_names = set()
     for item in data:
         for sub_item in item['data']:
@@ -211,16 +210,51 @@ def convert_data_to_csv(data, csv_file_path):
     for item in data:
         row = {'name': item['name']}
         for sub_item in item['data']:
+            # 将 x 轴和 y 轴的数据交换
             row[sub_item['name']] = sub_item['value']
         rows.append(row)
 
-    with open(csv_file_path, mode='w', newline='') as file:
-        writer = csv.DictWriter(file, fieldnames=['name'] + list(all_names))
-        writer.writeheader()
+    # 转置数据，交换 x 轴和 y 轴
+    transposed_rows = []
+    for name in all_names:
+        transposed_row = {'name': name}
         for row in rows:
-            writer.writerow(row)
+            transposed_row[row['name']] = row.get(name, '')
+        transposed_rows.append(transposed_row)
+    return {
+        "dataname": dataname,
+        "rows": rows,
+        "data": transposed_rows
+    }
+def save_to_csv(data, csv_file_path):
+    with open(csv_file_path, mode='w', newline='') as file:
+        for i in data:
+            writer = csv.DictWriter(file, fieldnames=['name'] + [row['name'] for row in i["rows"]])
+            writer.writerow({"name": i["dataname"]})
+            writer.writeheader()
+            for row in i["data"]:
+                writer.writerow(row)
+            writer.writerow({"name": ""})
 
     print(f"CSV 文件已保存至 {csv_file_path}")
+
+def convert_data_to_csv_2(data, csv_file_path):
+    with open(csv_file_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        for item in data:
+            writer.writerow([item['name']])
+            all_names = set()
+            for sub_item in item['data']:
+                all_names.add(sub_item['name'])
+            fieldnames = ['name'] + list(all_names)
+            writer.writerow(fieldnames)
+            for sub_item in item['data']:
+                row = [sub_item['name']] + [sub_item['value'] for _ in range(len(all_names))]
+                writer.writerow(row)
+            writer.writerow([])  # 空行分隔不同数据
+
+    print(f"CSV 文件已保存至 {csv_file_path}")
+
 
 def find_diagram(filepath: str):
     start_time = time.time()
@@ -233,8 +267,16 @@ def find_diagram(filepath: str):
     换流变 = func_get_analog_from_file(换流变模拟量_字段名, 换流变模拟量, Child="Child2")
 
     print(直流场电压)
-    convert_data_to_csv(直流场电压, '直流场电压.csv')
+    convert_data_to_csv_2(直流场电压 + 直流场电流 + 换流变, '直流场电压.csv')
 
+    data_list = [
+        convert_data_to_csv_style("直流场电流", 直流场电流),
+        convert_data_to_csv_style("直流场电压", 直流场电压),
+        convert_data_to_csv_style("直流场电压", 直流场电压_PCP_CCP),
+        convert_data_to_csv_style("换流变", 换流变)
+    ]
+    save_to_csv(data_list, "data.csv")
+    print(直流场电流)
     end_time = time.time()
     # 计算时间差
     elapsed_time = end_time - start_time
