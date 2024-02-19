@@ -1,4 +1,5 @@
 # import matplotlib.pyplot as plt
+import time
 import chardet
 from comtrade import Comtrade
 import csv
@@ -133,7 +134,7 @@ def transform(des_file, res_file):
     with open(res_file, 'w', encoding='utf-8') as file:
         line = str(data, encoding=res['encoding'])
         file.write(line)
-    print(line)
+    # print(line)
 
 def load_diagram(file_header: str):
     cfgFile = file_header + ".CFG"
@@ -142,7 +143,7 @@ def load_diagram(file_header: str):
     try:
         rec.load(cfgFile, datFile)
     except UnicodeDecodeError as e:
-        ocfgfile = cfgFile + "utf8"
+        ocfgfile = cfgFile + "cfg"
         transform(cfgFile,ocfgfile)
 
         rec.load(ocfgfile, datFile)
@@ -200,7 +201,29 @@ def get_analog_from_file(filepath):
 
     return _get_analog_from_file
 
+def convert_data_to_csv(data, csv_file_path):
+    all_names = set()
+    for item in data:
+        for sub_item in item['data']:
+            all_names.add(sub_item['name'])
+
+    rows = []
+    for item in data:
+        row = {'name': item['name']}
+        for sub_item in item['data']:
+            row[sub_item['name']] = sub_item['value']
+        rows.append(row)
+
+    with open(csv_file_path, mode='w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=['name'] + list(all_names))
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(row)
+
+    print(f"CSV 文件已保存至 {csv_file_path}")
+
 def find_diagram(filepath: str):
+    start_time = time.time()
     log_list.clear()
     # 直流场电流模拟量
     func_get_analog_from_file = get_analog_from_file(filepath)
@@ -209,6 +232,13 @@ def find_diagram(filepath: str):
     直流场电压_PCP_CCP = func_get_analog_from_file(直流场电压模拟量_PCP_CCP_字段名, 直流场电压模拟量_PCP_CCP)
     换流变 = func_get_analog_from_file(换流变模拟量_字段名, 换流变模拟量, Child="Child2")
 
+    print(直流场电压)
+    convert_data_to_csv(直流场电压, '直流场电压.csv')
+
+    end_time = time.time()
+    # 计算时间差
+    elapsed_time = end_time - start_time
+    print(f"程序运行时间为：{elapsed_time} 秒")
     pass
 
 
@@ -225,3 +255,6 @@ def write_to_csv(filename: str, output_analog):
                 writer.writerow([per["name"], per["value"]])
 
     f.close()
+
+if __name__ == '__main__':
+    find_diagram(r"C:\WorkSpace\Recoder\20231006test")
