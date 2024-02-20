@@ -10,34 +10,15 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pyinstaller
-
-      - name: Build executable
-        run: |
-          pyinstaller --onefile main.py
-
-      - name: Copy AppxManifest.xml
-        run: |
-          Copy-Item -Path "AppxManifest.xml" -Destination "dist\AppxManifest.xml" -Force
-
-      - name: Build MSIX package
-        run: |
-          & 'C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe' pack /d dist /p ComtradeTool.msix
-          # Adjust the path to makeappx.exe based on your Windows Kits version
-
-      - name: Upload MSIX artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: msix-package
-          path: ComtradeTool.msix
+      - uses: actions/checkout@v4
+      
+      # https://github.com/marketplace/actions/push-to-ghcr
+      - name: Build and publish a Docker image for ${{ github.repository }}
+       uses: macbre/push-to-ghcr@master
+       with:
+         image_name: ${{ github.repository }}  # it will be lowercased internally
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         # optionally push to the Docker Hub (docker.io)
+         # docker_io_token: ${{ secrets.DOCKER_IO_ACCESS_TOKEN }}  # see https://hub.docker.com/settings/security
+         # customize the username to be used when pushing to the Docker Hub
+         # docker_io_user: foobar  # see https://github.com/macbre/push-to-ghcr/issues/14
