@@ -1,3 +1,4 @@
+import datetime
 import os
 import random
 import shutil
@@ -42,7 +43,7 @@ def main():
     """, """
 # 模拟量检查工具
 用于自动生成小定值零飘检查需要的表格文件
-将下载的内置录波谱图文件夹打包成zip文件，然后上传，请勿更改导出文件名
+将下载的内置录波谱图文件夹打包成zip文件，然后上传，请勿更改谱图文件名
 文件夹层级任意
     """))
 
@@ -62,7 +63,7 @@ def main():
     # 计算时间差
     elapsed_time = end_time - start_time
     put_markdown(f"程序运行时间为：{elapsed_time} 秒")
-    put_file(random_name + ".csv", content, '点击下载CSV文件')
+    put_file("小定值保护模拟量零漂检查{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
 
 
 if __name__ == '__main__':
