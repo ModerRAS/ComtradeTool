@@ -1,4 +1,5 @@
 # import matplotlib.pyplot as plt
+import json
 import time
 import chardet
 from comtrade import Comtrade
@@ -197,7 +198,8 @@ def get_analog_from_file(filepath):
             rec = load_diagram(path_without_extension)
             data_list.append({
                 "name": i,
-                "data": get_analog(rec, 量)
+                "data": get_analog(rec, 量),
+                "row": 量
             })
         return data_list
 
@@ -215,7 +217,6 @@ def convert_data_to_csv_style(dataname, data):
             # 将 x 轴和 y 轴的数据交换
             row[sub_item['name']] = sub_item['value']
         rows.append(row)
-
     # 转置数据，交换 x 轴和 y 轴
     transposed_rows = []
     for name in all_names:
@@ -226,7 +227,8 @@ def convert_data_to_csv_style(dataname, data):
     return {
         "dataname": dataname,
         "rows": rows,
-        "data": transposed_rows
+        "data": transposed_rows,
+        "lines": data[0]["row"]
     }
 def save_to_csv(data, csv_file_path):
     with open(csv_file_path, mode='w', encoding='gbk', newline='') as file:
@@ -234,8 +236,12 @@ def save_to_csv(data, csv_file_path):
             writer = csv.DictWriter(file, fieldnames=['name'] + [row['name'] for row in i["rows"]])
             writer.writerow({"name": i["dataname"]})
             writer.writeheader()
-            for row in i["data"]:
-                writer.writerow(row)
+            for line in i["lines"]:
+                for j in i["data"]:
+                    if j["name"] == line:
+                        writer.writerow(j)
+            # for row in i["data"]:
+            #     writer.writerow(row)
             writer.writerow({"name": ""})
 
     print(f"CSV 文件已保存至 {csv_file_path}")
