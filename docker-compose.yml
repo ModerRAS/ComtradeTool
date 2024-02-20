@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  comtradetool:
+    restart: always
+    image: ghcr.io/moderras/comtradetool:master
+    ports:
+      - "23080:23080"
