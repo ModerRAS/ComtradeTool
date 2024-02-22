@@ -145,8 +145,6 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
             quantity_index = build_index(i["data"])
             analog_list.extend(func_get_analog_from_file([per_field, ], quantity_index.keys(), Child=i["Child"], get_filename_keyword=get_filename_keyword_with_pole))
 
-        fixed_analog_list = []
-
         quantity_data = []
 
         for analog in analog_list:
