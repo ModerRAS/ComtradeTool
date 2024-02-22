@@ -133,21 +133,39 @@ def build_index_with_field(字段,总量):
 
 def get_DC_field_analog_quantity(filepath: str, csv_path: str):
     func_get_analog_from_file = get_analog_from_file(filepath)
-    for per_field in 带极总字段:
+    analog_data_list = []
+    for iter, per_field in enumerate(带极总字段):
+        print_log("开始读取{}".format(per_field), progress=float(iter)/len(带极总字段))
         Child_with_quantity = filter_analog_data(per_field, 直流场总模拟量)
         index_with_field = build_index_with_field(per_field, 直流场总模拟量)
+        rows_list = [i["display_name"] for i in 直流场总模拟量]
         analog_list = []
 
         for i in Child_with_quantity:
             quantity_index = build_index(i["data"])
-            analog_list.extend(func_get_analog_from_file(per_field, quantity_index.keys(), Child=i["Child"], get_filename_keyword=get_filename_keyword_with_pole))
+            analog_list.extend(func_get_analog_from_file([per_field, ], quantity_index.keys(), Child=i["Child"], get_filename_keyword=get_filename_keyword_with_pole))
 
         fixed_analog_list = []
 
+        quantity_data = []
+
         for analog in analog_list:
-            tmp = copy.deepcopy(analog)
-            tmp["row"] = index_with_field[analog["row"]]
-            fixed_analog_list.append(tmp)
+            for quantity in analog["data"]:
+                quantity_data.append({
+                    "name": index_with_field[quantity["name"]],
+                    "value": quantity["value"]
+                })
+        analog_data_list.append({
+            "name": per_field,
+            "data": quantity_data,
+            "row": rows_list
+        })
+    data_list = convert_data_to_csv_style("直流场模拟量", analog_data_list, transpose=False)
+    data_list["rows"] = [{"name": i["display_name"]} for i in 直流场总模拟量]
+    save_to_csv([data_list, ], csv_path)
+    print_log("开始读取{}".format(per_field), progress=1)
+
+
 
 
 
@@ -155,3 +173,4 @@ if __name__ == '__main__':
     from pywebio.output import put_progressbar
     # find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
     put_progressbar("Progress", 0, "进度")
+    get_DC_field_analog_quantity(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text4.csv")
