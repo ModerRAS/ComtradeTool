@@ -1,9 +1,10 @@
 # import matplotlib.pyplot as plt
+import copy
 import time
 from comtrade import Comtrade
 import os
 
-from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_max, print_log, save_to_csv, transform
+from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, get_max, print_log, save_to_csv, transform
 from data import *
 
 
@@ -48,7 +49,7 @@ def get_analog(rec: Comtrade, use_analog_list: list[str]):
 
 
 def get_analog_from_file(filepath):
-    def _get_analog_from_file(字段, 量, Child="Child0"):
+    def _get_analog_from_file(字段, 量, Child="Child0", get_filename_keyword=get_filename_keyword):
         data_list = []
         for i in 字段:
             files = filter_files(filepath, [get_filename_keyword(i), Child])
@@ -107,6 +108,46 @@ def filter_all_analog(字段,总量):
         })
     return filtered_analog_quantity
 
+def build_index(data):
+    index = {}
+    for d in data:
+        for name in d["data_names"]:
+            index[name] = d["display_name"]
+    return index
+
+def filter_analog_data(字段,总量):
+    all_children = set([d["Child"] for d in 总量])
+    Child_with_quantity = []
+    for child in all_children:
+        filtered_data = [d for d in 总量 if d["Child"] == child and 字段 in d["From"]]
+        if len(filtered_data) > 0:
+            Child_with_quantity.append({
+                "Child": child,
+                "data": filtered_data
+            })
+        print(f"Child: {child}, Filtered Data: {filtered_data}")
+    return Child_with_quantity
+
+def build_index_with_field(字段,总量):
+    return build_index([d for d in 总量 if 字段 in d["From"]])
+
+def get_DC_field_analog_quantity(filepath: str, csv_path: str):
+    func_get_analog_from_file = get_analog_from_file(filepath)
+    for per_field in 带极总字段:
+        Child_with_quantity = filter_analog_data(per_field, 直流场总模拟量)
+        index_with_field = build_index_with_field(per_field, 直流场总模拟量)
+        analog_list = []
+
+        for i in Child_with_quantity:
+            quantity_index = build_index(i["data"])
+            analog_list.extend(func_get_analog_from_file(per_field, quantity_index.keys(), Child=i["Child"], get_filename_keyword=get_filename_keyword_with_pole))
+
+        fixed_analog_list = []
+
+        for analog in analog_list:
+            tmp = copy.deepcopy(analog)
+            tmp["row"] = index_with_field[analog["row"]]
+            fixed_analog_list.append(tmp)
 
 
 
