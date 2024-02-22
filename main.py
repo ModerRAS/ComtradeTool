@@ -11,7 +11,7 @@ from pywebio.output import *
 from pywebio.session import info as session_info
 from pywebio.session import go_app
 
-from diagram import find_diagram, get_DC_field_analog_quantity
+from diagram import find_diagram, find_diagram_hlb2, get_DC_field_analog_quantity
 
 def unzip_file(zip_file_path, extract_to_folder):
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
@@ -86,11 +86,27 @@ def 模拟量检查():
     content = process_content(get_DC_field_analog_quantity)
     put_file("直流场模拟量检查{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
 
+def 换流变2模拟量检查():
+    """分析波形的简单应用
+    """
+
+    put_markdown(t("""
+    """, """
+# 模拟量检查工具
+用于自动生成换流变2模拟量检查需要的表格文件
+将下载的内置录波谱图文件夹打包成zip文件，然后上传，请勿更改谱图文件名
+文件夹层级任意
+    """))
+
+    content = process_content(find_diagram_hlb2)
+    put_file("换流变2模拟量检查{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
+
 
 def index():
     put_markdown("# 模拟量检查工具")
     put_buttons(['点击进入小定值零飘检查（月度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
     put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('模拟量检查', new_window=False)])
+    put_buttons(['点击进入换流变2模拟量检查（季度）'], [lambda: go_app('换流变2模拟量检查', new_window=False)])
 
 if __name__ == '__main__':
-    start_server([index,小定值零飘检查, 模拟量检查], debug=True, port=23080)
+    start_server([index,小定值零飘检查, 模拟量检查, 换流变2模拟量检查], debug=True, port=23080)

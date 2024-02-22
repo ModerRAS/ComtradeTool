@@ -7,9 +7,6 @@ import os
 from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, get_max, print_log, save_to_csv, transform
 from data import *
 
-
-log_list = []
-
 def load_diagram(file_header: str):
     cfgFile = file_header + ".CFG"
     datFile = file_header + ".DAT"
@@ -69,7 +66,6 @@ def get_analog_from_file(filepath):
 
 def find_diagram(filepath: str, csv_path: str):
     start_time = time.time()
-    log_list.clear()
     # 直流场电流模拟量
     func_get_analog_from_file = get_analog_from_file(filepath)
     print_log("读取直流场电流模拟量", 0.25)
@@ -87,6 +83,25 @@ def find_diagram(filepath: str, csv_path: str):
         convert_data_to_csv_style("直流场电压", 直流场电压),
         convert_data_to_csv_style("直流场电压", 直流场电压_PCP_CCP),
         convert_data_to_csv_style("换流变", 换流变)
+    ]
+    save_to_csv(data_list, csv_path)
+    end_time = time.time()
+    # 计算时间差
+    elapsed_time = end_time - start_time
+    print(f"程序运行时间为：{elapsed_time} 秒")
+    print_log("完成", 1)
+
+def find_diagram_hlb2(filepath: str, csv_path: str):
+    start_time = time.time()
+    # 直流场电流模拟量
+    func_get_analog_from_file = get_analog_from_file(filepath)
+    print_log("读取换流变2模拟量", 0.5)
+    换流变2 = func_get_analog_from_file(换流变2字段, 换流变2模拟量, Child="Child2")
+
+    print_log("开始保存为CSV", 0.99)
+
+    data_list = [
+        convert_data_to_csv_style("换流变2", 换流变2),
     ]
     save_to_csv(data_list, csv_path)
     end_time = time.time()
