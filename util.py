@@ -128,8 +128,10 @@ def convert_data_to_csv_2(data, csv_file_path):
 
     print(f"CSV 文件已保存至 {csv_file_path}")
 
-def print_log(log_str: str):
+def print_log(log_str: str, progress=-1):
     if 'unittest' in sys.modules.keys():
         print(log_str)
+    elif progress!=-1:
+        set_progressbar("Progress", progress)
     else:
         put_markdown(log_str)

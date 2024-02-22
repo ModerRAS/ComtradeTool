@@ -72,15 +72,15 @@ def find_diagram(filepath: str, csv_path: str):
     log_list.clear()
     # 直流场电流模拟量
     func_get_analog_from_file = get_analog_from_file(filepath)
-    print_log("读取直流场电流模拟量")
+    print_log("读取直流场电流模拟量", 0.25)
     直流场电流 = func_get_analog_from_file(直流场电流模拟量_字段名, 直流场电流模拟量)
-    print_log("读取直流场电压模拟量")
+    print_log("读取直流场电压模拟量", 0.5)
     直流场电压 = func_get_analog_from_file(直流场电压模拟量_字段名, 直流场电压模拟量)
     直流场电压_PCP_CCP = func_get_analog_from_file(直流场电压模拟量_PCP_CCP_字段名, 直流场电压模拟量_PCP_CCP)
-    print_log("读取换流变模拟量")
+    print_log("读取换流变模拟量", 0.75)
     换流变 = func_get_analog_from_file(换流变模拟量_字段名, 换流变模拟量, Child="Child2")
 
-    print_log("开始保存为CSV")
+    print_log("开始保存为CSV", 0.99)
 
     data_list = [
         convert_data_to_csv_style("直流场电流", 直流场电流),
@@ -93,7 +93,7 @@ def find_diagram(filepath: str, csv_path: str):
     # 计算时间差
     elapsed_time = end_time - start_time
     print(f"程序运行时间为：{elapsed_time} 秒")
-    pass
+    print_log("完成", 1)
 
 def filter_all_analog(字段,总量):
     filtered_analog_quantity = []
@@ -152,4 +152,6 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
 
 
 if __name__ == '__main__':
-    find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
+    from pywebio.output import put_progressbar
+    # find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
+    put_progressbar("Progress", 0, "进度")

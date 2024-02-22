@@ -11,7 +11,7 @@ from pywebio.output import *
 from pywebio.session import info as session_info
 from pywebio.session import go_app
 
-from diagram import find_diagram
+from diagram import find_diagram, get_DC_field_analog_quantity
 
 def unzip_file(zip_file_path, extract_to_folder):
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
@@ -36,6 +36,26 @@ def delete_file_or_folder(path):
     else:
         print(f'路径 {path} 不是有效的文件或文件夹路径。')
 
+def process_content(process_func=find_diagram):
+    f = file_upload("上传波形文件压缩包", accept="application/zip")
+    start_time = time.time()
+    put_progressbar("Progress", 0, "进度")
+    put_markdown("处理中。。。。。。")
+    random_name = generate_random_string(10)
+    open('/tmp/'+ random_name + ".zip", 'wb').write(f['content'])
+    unzip_file('/tmp/'+ random_name + ".zip", '/tmp/'+ random_name)
+    process_func('/tmp/'+ random_name, csv_path='/tmp/'+ random_name + ".csv")
+    content = open('/tmp/'+ random_name + ".csv", 'rb').read()
+    put_markdown("清理临时文件")
+    delete_file_or_folder('/tmp/'+ random_name + ".zip")
+    delete_file_or_folder('/tmp/'+ random_name)
+    delete_file_or_folder('/tmp/'+ random_name + ".csv")
+    end_time = time.time()
+    # 计算时间差
+    elapsed_time = end_time - start_time
+    put_markdown(f"程序运行时间为：{elapsed_time} 秒")
+    return content
+
 def 小定值零飘检查():
     """分析波形的简单应用
     """
@@ -48,28 +68,29 @@ def 小定值零飘检查():
 文件夹层级任意
     """))
 
-    f = file_upload("上传波形文件压缩包", accept="application/zip")
-    start_time = time.time()
-    put_markdown("处理中。。。。。。")
-    random_name = generate_random_string(10)
-    open('/tmp/'+ random_name + ".zip", 'wb').write(f['content'])
-    unzip_file('/tmp/'+ random_name + ".zip", '/tmp/'+ random_name)
-    find_diagram('/tmp/'+ random_name, csv_path='/tmp/'+ random_name + ".csv")
-    content = open('/tmp/'+ random_name + ".csv", 'rb').read()
-    put_markdown("清理临时文件")
-    delete_file_or_folder('/tmp/'+ random_name + ".zip")
-    delete_file_or_folder('/tmp/'+ random_name)
-    delete_file_or_folder('/tmp/'+ random_name + ".csv")
-    end_time = time.time()
-    # 计算时间差
-    elapsed_time = end_time - start_time
-    put_markdown(f"程序运行时间为：{elapsed_time} 秒")
+    content = process_content(find_diagram)
     put_file("小定值保护模拟量零漂检查{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
+
+def 模拟量检查():
+    """分析波形的简单应用
+    """
+
+    put_markdown(t("""
+    """, """
+# 模拟量检查工具
+用于自动生成直流场模拟量检查需要的表格文件
+将下载的内置录波谱图文件夹打包成zip文件，然后上传，请勿更改谱图文件名
+文件夹层级任意
+    """))
+
+    content = process_content(get_DC_field_analog_quantity)
+    put_file("直流场模拟量检查{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
+
 
 def index():
     put_markdown("# 模拟量检查工具")
     put_buttons(['点击进入小定值零飘检查（月度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
-    put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
+    put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('模拟量检查', new_window=False)])
 
 if __name__ == '__main__':
-    start_server([index,小定值零飘检查], debug=True, port=23080)
+    start_server([index,小定值零飘检查, 模拟量检查], debug=True, port=23080)
