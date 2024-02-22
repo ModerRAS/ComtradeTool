@@ -94,5 +94,21 @@ def find_diagram(filepath: str, csv_path: str):
     print(f"程序运行时间为：{elapsed_time} 秒")
     pass
 
+def filter_all_analog(字段,总量):
+    filtered_analog_quantity = []
+    for per_field in 字段:
+        per_field_quantity = []
+        for per_quantity in 总量:
+            if per_field in per_quantity["From"]:
+                per_field_quantity.append(per_quantity)
+        filtered_analog_quantity.append({
+            "field": per_field,
+            "quantity": per_field_quantity
+        })
+    return filtered_analog_quantity
+
+
+
+
 if __name__ == '__main__':
     find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
