@@ -1,6 +1,8 @@
 import csv
 import os
+import sys
 import chardet
+from pywebio.output import *
 
 
 def get_filename_keyword_with_pole(name: str):
@@ -110,3 +112,9 @@ def convert_data_to_csv_2(data, csv_file_path):
             writer.writerow([])  # 空行分隔不同数据
 
     print(f"CSV 文件已保存至 {csv_file_path}")
+
+def print_log(log_str: str):
+    if 'unittest' in sys.modules.keys():
+        print(log_str)
+    else:
+        put_markdown(log_str)

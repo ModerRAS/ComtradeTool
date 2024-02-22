@@ -1,14 +1,9 @@
 # import matplotlib.pyplot as plt
-import json
 import time
-import chardet
 from comtrade import Comtrade
-import csv
 import os
-import codecs
-from pywebio.output import *
 
-from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_max, save_to_csv, transform
+from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_max, print_log, save_to_csv, transform
 from data import *
 
 
@@ -56,10 +51,9 @@ def get_analog_from_file(filepath):
     def _get_analog_from_file(字段, 量, Child="Child0"):
         data_list = []
         for i in 字段:
-            # put_markdown("读取字段 {}".format(i))
             files = filter_files(filepath, [get_filename_keyword(i), Child])
             if len(files) <= 0:
-                put_markdown("cannot find {}".format(i))
+                print_log("cannot find {}".format(i))
                 continue
             path_without_extension, extension = os.path.splitext(files[0])
             rec = load_diagram(path_without_extension)
@@ -77,15 +71,15 @@ def find_diagram(filepath: str, csv_path: str):
     log_list.clear()
     # 直流场电流模拟量
     func_get_analog_from_file = get_analog_from_file(filepath)
-    put_markdown("读取直流场电流模拟量")
+    print_log("读取直流场电流模拟量")
     直流场电流 = func_get_analog_from_file(直流场电流模拟量_字段名, 直流场电流模拟量)
-    put_markdown("读取直流场电压模拟量")
+    print_log("读取直流场电压模拟量")
     直流场电压 = func_get_analog_from_file(直流场电压模拟量_字段名, 直流场电压模拟量)
     直流场电压_PCP_CCP = func_get_analog_from_file(直流场电压模拟量_PCP_CCP_字段名, 直流场电压模拟量_PCP_CCP)
-    put_markdown("读取换流变模拟量")
+    print_log("读取换流变模拟量")
     换流变 = func_get_analog_from_file(换流变模拟量_字段名, 换流变模拟量, Child="Child2")
 
-    put_markdown("开始保存为CSV")
+    print_log("开始保存为CSV")
 
     data_list = [
         convert_data_to_csv_style("直流场电流", 直流场电流),
