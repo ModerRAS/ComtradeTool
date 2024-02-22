@@ -54,7 +54,7 @@ def filter_files(directory, keywords):
     return files
 
 
-def convert_data_to_csv_style(dataname, data):
+def convert_data_to_csv_style(dataname, data, transpose=True):
     all_names = set()
     for item in data:
         for sub_item in item['data']:
@@ -66,20 +66,35 @@ def convert_data_to_csv_style(dataname, data):
         for sub_item in item['data']:
             # 将 x 轴和 y 轴的数据交换
             row[sub_item['name']] = sub_item['value']
+        # 没有的数据填空，不能没有key
+        for name_key in all_names:
+            if row.get(name_key) is None:
+                row[name_key] = ""
         rows.append(row)
-    # 转置数据，交换 x 轴和 y 轴
-    transposed_rows = []
-    for name in all_names:
-        transposed_row = {'name': name}
-        for row in rows:
-            transposed_row[row['name']] = row.get(name, '')
-        transposed_rows.append(transposed_row)
-    return {
-        "dataname": dataname,
-        "rows": rows,
-        "data": transposed_rows,
-        "lines": data[0]["row"]
-    }
+
+    if transpose:
+        # 转置数据，交换 x 轴和 y 轴
+        transposed_rows = []
+        for name in all_names:
+            transposed_row = {'name': name}
+            for row in rows:
+                transposed_row[row['name']] = row.get(name, '')
+            transposed_rows.append(transposed_row)
+        return {
+            "dataname": dataname,
+            "rows": rows,
+            "data": transposed_rows,
+            "lines": data[0]["row"]
+        }
+    else:
+        return {
+            "dataname": dataname,
+            "rows": [{"name": name } for name in all_names],
+            "data": rows,
+            "lines": [i["name"] for i in data]
+        }
+
+
 def save_to_csv(data, csv_file_path):
     with open(csv_file_path, mode='w', encoding='gbk', newline='') as file:
         for i in data:
