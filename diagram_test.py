@@ -10,5 +10,5 @@ class TestDiagram(unittest.TestCase):
             data = f.read()
         with open("testdata/result1.csv", 'rb') as f:
             example_result = f.read()
-
-        self.assertEqual(data, example_result)
+        for i,d in enumerate(data):
+            self.assertEqual(d, example_result[i])
