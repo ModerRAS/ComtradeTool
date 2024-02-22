@@ -907,7 +907,7 @@
     },
 ]
 
-all_diagram_name = [
+带极总字段 = [
     "P1CCP1A",
     "P1CCP1B",
     "P1CPR1A",
