@@ -5,7 +5,7 @@ from diagram import find_diagram
 
 class TestDiagram(unittest.TestCase):
     def compare_csv(self, file1, file2):
-        with open(file1, newline='') as f1, open(file2, newline='') as f2:
+        with open(file1, encoding='gbk', newline='') as f1, open(file2, encoding='gbk', newline='') as f2:
             reader1 = csv.reader(f1)
             reader2 = csv.reader(f2)
             for row1, row2 in zip(reader1, reader2):
