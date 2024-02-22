@@ -64,6 +64,43 @@ def get_analog_from_file(filepath):
 
     return _get_analog_from_file
 
+
+def filter_all_analog(字段,总量):
+    filtered_analog_quantity = []
+    for per_field in 字段:
+        per_field_quantity = []
+        for per_quantity in 总量:
+            if per_field in per_quantity["From"]:
+                per_field_quantity.append(per_quantity)
+        filtered_analog_quantity.append({
+            "field": per_field,
+            "quantity": per_field_quantity
+        })
+    return filtered_analog_quantity
+
+def build_index(data):
+    index = {}
+    for d in data:
+        for name in d["data_names"]:
+            index[name] = d["display_name"]
+    return index
+
+def filter_analog_data(字段,总量):
+    all_children = set([d["Child"] for d in 总量])
+    Child_with_quantity = []
+    for child in all_children:
+        filtered_data = [d for d in 总量 if d["Child"] == child and 字段 in d["From"]]
+        if len(filtered_data) > 0:
+            Child_with_quantity.append({
+                "Child": child,
+                "data": filtered_data
+            })
+        print(f"Child: {child}, Filtered Data: {filtered_data}")
+    return Child_with_quantity
+
+def build_index_with_field(字段,总量):
+    return build_index([d for d in 总量 if 字段 in d["From"]])
+
 def find_diagram(filepath: str, csv_path: str):
     start_time = time.time()
     # 直流场电流模拟量
@@ -109,42 +146,6 @@ def find_diagram_hlb2(filepath: str, csv_path: str):
     elapsed_time = end_time - start_time
     print(f"程序运行时间为：{elapsed_time} 秒")
     print_log("完成", 1)
-
-def filter_all_analog(字段,总量):
-    filtered_analog_quantity = []
-    for per_field in 字段:
-        per_field_quantity = []
-        for per_quantity in 总量:
-            if per_field in per_quantity["From"]:
-                per_field_quantity.append(per_quantity)
-        filtered_analog_quantity.append({
-            "field": per_field,
-            "quantity": per_field_quantity
-        })
-    return filtered_analog_quantity
-
-def build_index(data):
-    index = {}
-    for d in data:
-        for name in d["data_names"]:
-            index[name] = d["display_name"]
-    return index
-
-def filter_analog_data(字段,总量):
-    all_children = set([d["Child"] for d in 总量])
-    Child_with_quantity = []
-    for child in all_children:
-        filtered_data = [d for d in 总量 if d["Child"] == child and 字段 in d["From"]]
-        if len(filtered_data) > 0:
-            Child_with_quantity.append({
-                "Child": child,
-                "data": filtered_data
-            })
-        print(f"Child: {child}, Filtered Data: {filtered_data}")
-    return Child_with_quantity
-
-def build_index_with_field(字段,总量):
-    return build_index([d for d in 总量 if 字段 in d["From"]])
 
 def get_DC_field_analog_quantity(filepath: str, csv_path: str):
     func_get_analog_from_file = get_analog_from_file(filepath)
