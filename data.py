@@ -1,3 +1,101 @@
+直流场电流模拟量 = [
+    "IDEL1",
+    "IDEL2",
+    "IDEE1",
+    "IDEE2",
+    "IDGND",
+    "IDME",
+    "INBGS",
+    "IMRTB",
+    "IGRTS",
+    "IANE",
+    "ICN",
+    "IAN",
+    "IZT1",
+    "IZ1T2",
+    "IZ2T2",
+]
+
+直流场电流模拟量_字段名 = [
+    "PPR1A",
+    "PPR1B",
+    "PPR1C",
+    "PPR2A",
+    "PPR2B",
+    "PPR2C"
+]
+
+
+# CPR/CCP/PCP
+直流场电压模拟量 = [
+    "UDL",
+    "UDM",
+    "UDN"
+]
+
+直流场电压模拟量_字段名 = [
+    "CPR11A",
+    "CPR11B",
+    "CPR11C",
+    "CPR12A",
+    "CPR12B",
+    "CPR12C",
+    "CPR21A",
+    "CPR21B",
+    "CPR21C",
+    "CPR22A",
+    "CPR22B",
+    "CPR22C",
+    "PPR1A",
+    "PPR1B",
+    "PPR1C",
+    "PPR2A",
+    "PPR2B",
+    "PPR2C"
+]
+
+
+直流场电压模拟量_PCP_CCP = [
+    "UDL_IN",
+    "UDM_IN",
+    "UDN_IN",
+]
+
+直流场电压模拟量_PCP_CCP_字段名 = [
+    "PCP1A",
+    "PCP1B",
+    "PCP2A",
+    "PCP2B",
+    "CCP11A",
+    "CCP11B",
+    "CCP12A",
+    "CCP12B",
+    "CCP21A",
+    "CCP21B",
+    "CCP22A",
+    "CCP22B",
+]
+
+换流变模拟量 = [
+    "YY换流变中性点电流",
+    "YD换流变中性点电流"
+]
+
+换流变模拟量_字段名 = [
+    "CPR11A",
+    "CPR11B",
+    "CPR11C",
+    "CPR12A",
+    "CPR12B",
+    "CPR12C",
+    "CPR21A",
+    "CPR21B",
+    "CPR21C",
+    "CPR22A",
+    "CPR22B",
+    "CPR22C"
+]
+
 直流场总模拟量 = [
     {
         "display_name": "Z1.T3(R1)",
@@ -808,3 +906,37 @@
         ]
     },
 ]
+
+all_diagram_name = [
+    "P1CCP1A",
+    "P1CCP1B",
+    "P1CPR1A",
+    "P1CPR1B",
+    "P1CPR1C",
+    "P1CCP2A",
+    "P1CCP2B",
+    "P1CPR2A",
+    "P1CPR2B",
+    "P1CPR2C",
+    "P1PCPA",
+    "P1PCPB",
+    "P1PPRA",
+    "P1PPRB",
+    "P1PPRC",
+    "P2CCP1A",
+    "P2CCP1B",
+    "P2CPR1A",
+    "P2CPR1B",
+    "P2CPR1C",
+    "P2CCP2A",
+    "P2CCP2B",
+    "P2CPR2A",
+    "P2CPR2B",
+    "P2CPR2C",
+    "P2PCPA",
+    "P2PCPB",
+    "P2PPRA",
+    "P2PPRB",
+    "P2PPRC",
+]
+
