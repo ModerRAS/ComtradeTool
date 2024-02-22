@@ -179,10 +179,6 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
     save_to_csv([data_list, ], csv_path)
     print_log("完成", progress=1)
 
-
-
-
-
 if __name__ == '__main__':
     from pywebio.output import put_progressbar
     # find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
