@@ -9,6 +9,7 @@ from pywebio import start_server
 from pywebio.input import *
 from pywebio.output import *
 from pywebio.session import info as session_info
+from pywebio.session import go_app
 
 from diagram import find_diagram
 
@@ -35,7 +36,7 @@ def delete_file_or_folder(path):
     else:
         print(f'路径 {path} 不是有效的文件或文件夹路径。')
 
-def main():
+def 小定值零飘检查():
     """分析波形的简单应用
     """
 
@@ -65,6 +66,10 @@ def main():
     put_markdown(f"程序运行时间为：{elapsed_time} 秒")
     put_file("小定值保护模拟量零漂检查{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
 
+def index():
+    put_markdown("# 模拟量检查工具")
+    put_buttons(['点击进入小定值零飘检查（月度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
+    put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
 
 if __name__ == '__main__':
-    start_server(main, debug=True, port=23080)
+    start_server([index,小定值零飘检查], debug=True, port=23080)
