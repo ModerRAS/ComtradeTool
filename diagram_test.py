@@ -10,6 +10,7 @@ class TestDiagram(unittest.TestCase):
             reader2 = csv.reader(f2)
             for row1, row2 in zip(reader1, reader2):
                 if row1 != row2:
+                    print(row1, row2)
                     return False
             # Check if both files have the same number of rows
             return next(reader1, None) is None and next(reader2, None) is None
