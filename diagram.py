@@ -161,7 +161,7 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
     data_list = convert_data_to_csv_style("直流场模拟量", analog_data_list, transpose=False)
     data_list["rows"] = [{"name": i["display_name"]} for i in 直流场总模拟量]
     save_to_csv([data_list, ], csv_path)
-    print_log("开始读取{}".format(per_field), progress=1)
+    print_log("完成", progress=1)
 
 
 
