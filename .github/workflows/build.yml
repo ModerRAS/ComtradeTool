@@ -14,7 +14,8 @@ jobs:
       contents: read
       packages: write
     runs-on: ubuntu-latest
-
+    env:
+      TZ: Asia/Shanghai
     steps:
       - uses: actions/checkout@v4
       - name: Set up QEMU
@@ -52,7 +53,7 @@ jobs:
       - name: Get and Format Time
         run: |
           rm -f build_time.py
-          current_time=$(date -u +"%Y-%m-%d %H:%M:%S")
+          current_time=$(date +"%Y-%m-%d %H:%M:%S")
           echo "from datetime import datetime" > build_time.py
           echo "build_time = datetime.strptime('$current_time', '%Y-%m-%d %H:%M:%S')" >> build_time.py
           echo "formatted_time = build_time.strftime('%Y-%m-%d %H:%M:%S')" >> build_time.py
