@@ -5,3 +5,9 @@ services:
     image: ghcr.io/moderras/comtradetool:master
     ports:
       - "23080:23080"
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    command: --interval 300
