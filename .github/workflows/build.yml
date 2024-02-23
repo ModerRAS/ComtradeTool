@@ -49,6 +49,14 @@ jobs:
         run: |
           rm -rf testdata
 
+      - name: Get and Format Time
+        run: |
+          rm -f build_time.py
+          current_time=$(date -u +"%Y-%m-%d %H:%M:%S")
+          echo "from datetime import datetime" > build_time.py
+          echo "build_time = datetime.strptime('$current_time', '%Y-%m-%d %H:%M:%S')" >> build_time.py
+          echo "formatted_time = build_time.strftime('%Y-%m-%d %H:%M:%S')" >> build_time.py
+
 
       - name: Build and push Docker image cpython
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4

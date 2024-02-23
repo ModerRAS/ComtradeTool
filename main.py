@@ -12,6 +12,7 @@ from pywebio.session import info as session_info
 from pywebio.session import go_app
 
 from diagram import find_diagram, find_diagram_hlb2, get_DC_field_analog_quantity
+from build_time import *
 
 def unzip_file(zip_file_path, extract_to_folder):
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
@@ -107,6 +108,7 @@ def index():
     put_buttons(['点击进入小定值零飘检查（月度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
     put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('模拟量检查', new_window=False)])
     put_buttons(['点击进入换流变2模拟量检查（季度）'], [lambda: go_app('换流变2模拟量检查', new_window=False)])
+    put_markdown("构建于{}".format(formatted_time))
 
 if __name__ == '__main__':
     start_server([index,小定值零飘检查, 模拟量检查, 换流变2模拟量检查], debug=True, port=23080)
