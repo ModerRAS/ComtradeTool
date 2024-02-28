@@ -111,4 +111,4 @@ def index():
     put_markdown("构建于{}".format(formatted_time))
 
 if __name__ == '__main__':
-    start_server([index,小定值零飘检查, 模拟量检查, 换流变2模拟量检查], debug=True, port=23080)
+    start_server([index,小定值零飘检查, 模拟量检查, 换流变2模拟量检查], debug=True, port=23080, cdn=False)
