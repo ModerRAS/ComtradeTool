@@ -147,37 +147,49 @@ def find_diagram_hlb2(filepath: str, csv_path: str):
     print(f"程序运行时间为：{elapsed_time} 秒")
     print_log("完成", 1)
 
+def get_analog_quantity(filepath: str, csv_path: str):
+    def _get_analog_quantity(字段, 量, 量名称):
+        func_get_analog_from_file = get_analog_from_file(filepath)
+        analog_data_list = []
+        for iter, per_field in enumerate(字段):
+            print_log("开始读取{}".format(per_field), progress=float(iter)/len(字段))
+            Child_with_quantity = filter_analog_data(per_field, 量)
+            index_with_field = build_index_with_field(per_field, 量)
+            rows_list = [i["display_name"] for i in 量]
+            analog_list = []
+
+            for i in Child_with_quantity:
+                quantity_index = build_index(i["data"])
+                analog_list.extend(func_get_analog_from_file([per_field, ], quantity_index.keys(), Child=i["Child"], get_filename_keyword=get_filename_keyword_with_pole))
+    
+            quantity_data = []
+    
+            for analog in analog_list:
+                for quantity in analog["data"]:
+                    quantity_data.append({
+                        "name": index_with_field[quantity["name"]],
+                        "value": quantity["value"]
+                    })
+            analog_data_list.append({
+                "name": per_field,
+                "data": quantity_data,
+                "row": rows_list
+            })
+        data_list = convert_data_to_csv_style(量名称, analog_data_list, transpose=False)
+        data_list["rows"] = [{"name": i["display_name"]} for i in 量]
+        save_to_csv([data_list, ], csv_path)
+        print_log("完成", progress=1)
+    return _get_analog_quantity
+
+
+
 def get_DC_field_analog_quantity(filepath: str, csv_path: str):
-    func_get_analog_from_file = get_analog_from_file(filepath)
-    analog_data_list = []
-    for iter, per_field in enumerate(带极总字段):
-        print_log("开始读取{}".format(per_field), progress=float(iter)/len(带极总字段))
-        Child_with_quantity = filter_analog_data(per_field, 直流场总模拟量)
-        index_with_field = build_index_with_field(per_field, 直流场总模拟量)
-        rows_list = [i["display_name"] for i in 直流场总模拟量]
-        analog_list = []
+    get_analog_quantity(filepath, csv_path)(带极总字段, 直流场总模拟量, "直流场模拟量")
 
-        for i in Child_with_quantity:
-            quantity_index = build_index(i["data"])
-            analog_list.extend(func_get_analog_from_file([per_field, ], quantity_index.keys(), Child=i["Child"], get_filename_keyword=get_filename_keyword_with_pole))
+def get_hlb1_analog_quantity(filepath: str, csv_path: str):
+    get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
-        quantity_data = []
 
-        for analog in analog_list:
-            for quantity in analog["data"]:
-                quantity_data.append({
-                    "name": index_with_field[quantity["name"]],
-                    "value": quantity["value"]
-                })
-        analog_data_list.append({
-            "name": per_field,
-            "data": quantity_data,
-            "row": rows_list
-        })
-    data_list = convert_data_to_csv_style("直流场模拟量", analog_data_list, transpose=False)
-    data_list["rows"] = [{"name": i["display_name"]} for i in 直流场总模拟量]
-    save_to_csv([data_list, ], csv_path)
-    print_log("完成", progress=1)
 
 if __name__ == '__main__':
     from pywebio.output import put_progressbar
