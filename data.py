@@ -1356,7 +1356,7 @@
     },
     {
         "display_name": "UVD1_L1",
-        "data_names": ["UVD1_L1", ],
+        "data_names": ["UVD1_L1", "UVD_L1"],
         "Child": "Child0",
         "From": [
             "P1CPR1A",
@@ -1375,7 +1375,7 @@
     },
     {
         "display_name": "UVD1_L2",
-        "data_names": ["UVD1_L2", ],
+        "data_names": ["UVD1_L2", "UVD_L2"],
         "Child": "Child0",
         "From": [
             "P1CPR1A",
@@ -1394,7 +1394,7 @@
     },
     {
         "display_name": "UVD1_L3",
-        "data_names": ["UVD1_L3", ],
+        "data_names": ["UVD1_L3", "UVD_L3"],
         "Child": "Child0",
         "From": [
             "P1CPR1A",
