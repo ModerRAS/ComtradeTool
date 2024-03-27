@@ -27,9 +27,26 @@ def get_max(analog):
     else:
         return min(analog)
 
+# def transform(des_file, res_file):
+#     '''
+#     将文件编码从 GBK 转换成 utf8
+#     :param des_file: 待转换的编码为 GBK 的源文件
+#     :param res_file: 转换之后的 utf8 编码的文件
+#     :return: 
+#     '''
+#     with open(des_file, 'rb') as f:
+#         data = f.read()
+#     res = chardet.detect(data)
+#     if res['encoding'] == 'GB2312':
+#         res['encoding'] = 'GBK'
+#     with open(res_file, 'w', encoding='utf-8') as file:
+#         line = str(data, encoding=res['encoding'])
+#         file.write(line)
+    # print(line)
+
 def transform(des_file, res_file):
     '''
-    将文件编码从 GBK 转换成 utf8
+    将文件编码从 GBK 转换成 utf8，并去掉每一行后面的空行
     :param des_file: 待转换的编码为 GBK 的源文件
     :param res_file: 转换之后的 utf8 编码的文件
     :return: 
@@ -39,10 +56,11 @@ def transform(des_file, res_file):
     res = chardet.detect(data)
     if res['encoding'] == 'GB2312':
         res['encoding'] = 'GBK'
-    with open(res_file, 'w', encoding='utf-8') as file:
-        line = str(data, encoding=res['encoding'])
-        file.write(line)
-    # print(line)
+    with open(res_file, 'wb') as file:
+        lines = str(data, encoding=res['encoding']).splitlines()
+        for line in lines:
+            line = line.rstrip('\r\n')  # 去掉每一行后面的换行符和回车符
+            file.write((line + '\n').encode('utf-8'))
 
 def filter_files(directory, keywords):
     files = []

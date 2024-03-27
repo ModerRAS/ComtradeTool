@@ -3,6 +3,8 @@ import copy
 import time
 from comtrade import Comtrade
 import os
+import numpy as np
+from scipy.fft import fft, fftfreq
 
 from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, get_max, print_log, save_to_csv, transform
 from data import *
@@ -40,6 +42,28 @@ def get_analog(rec: Comtrade, use_analog_list: list[str]):
         output_analog.append({
             "name": use_analog["name"],
             "value": max_value
+        })
+        # print(max([abs(), abs(min(analog))]))
+    return output_analog
+
+def get_analog_raw(rec: Comtrade, use_analog_list: list[str]):
+    analog_list = []
+    # 模拟通道的数量
+    analog_count = rec.analog_count
+    # 循环获取模拟通道的名称
+    for i in range(analog_count):
+        chan = rec.analog_channel_ids[i]
+        if chan in use_analog_list:
+            analog_list.append({
+                "name": chan,
+                "id": i
+            })
+    output_analog = []
+    # 循环输出81个模拟量通道的采集数据
+    for use_analog in analog_list:
+        output_analog.append({
+            "name": use_analog["name"],
+            "value": rec.analog[use_analog["id"]]
         })
         # print(max([abs(), abs(min(analog))]))
     return output_analog
@@ -189,7 +213,72 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
 def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
+def calculate_harmonic(voltage, harmonic_order, base_frequency=50, sampling_rate=1000):
+    """
+    计算指定次谐波的有效值
 
+    参数：
+    voltage: 电压数组，可以是 numpy 数组或普通数组
+    harmonic_order: 谐波次数，如2表示二次谐波，3表示三次谐波，以此类推
+    base_frequency: 基本频率，默认为50Hz
+    sampling_rate: 采样率，默认为1000Hz
+    as_numpy: 是否将输入转换为 numpy 数组，默认为 True
+
+    返回值：
+    harmonic_rms: 指定次谐波的有效值
+    """
+
+    if isinstance(voltage, np.ndarray):
+        voltage_np = voltage  # 输入为 numpy 数组
+    else:
+        voltage_np = np.array(voltage)  # 将输入的电压数组转换为 numpy 数组
+
+    # 傅立叶变换
+    fft_values = fft(voltage_np)
+    freqs = fftfreq(len(fft_values), 1/sampling_rate)
+
+    # 找到指定次谐波频率的索引
+    harmonic_freq = harmonic_order * base_frequency
+    harmonic_idx = np.argmin(np.abs(freqs - harmonic_freq))
+
+    # 计算指定次谐波的幅值
+    harmonic_amplitude = np.abs(fft_values[harmonic_idx])
+
+    # 计算指定次谐波的幅值密度
+    amplitude_density = harmonic_amplitude / (len(fft_values) // 2)
+
+    # 计算指定次谐波的有效值
+    harmonic_rms = amplitude_density / np.sqrt(2)
+
+    return harmonic_rms
+
+def chunk_array(arr, chunk_size=1000):
+    """
+    将数组按照每 chunk_size 个元素切割成若干个子数组
+
+    参数：
+    arr: 输入的数组
+    chunk_size: 每个子数组的大小，默认为1000
+
+    返回值：
+    chunks: 切割后的子数组列表
+    """
+    chunks = [arr[i:i + chunk_size] for i in range(0, len(arr), chunk_size)]
+    return chunks
+
+def overlap_chunks(arr, chunk_size=1000):
+    """
+    将数组按照重叠的方式切割成子数组
+
+    参数：
+    arr: 输入的数组
+    chunk_size: 每个子数组的大小，默认为1000
+
+    返回值：
+    chunks: 切割后的子数组列表
+    """
+    chunks = [arr[i:i + chunk_size] for i in range(len(arr) - chunk_size + 1)]
+    return chunks
 
 if __name__ == '__main__':
     from pywebio.output import put_progressbar
