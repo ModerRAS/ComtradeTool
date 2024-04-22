@@ -151,7 +151,7 @@ def get_hlb1_analog_quantity(filepath: str, csv_path: str):
 
 
 @jit
-def calculate_harmonic(voltage, harmonic_order, cyc_sample=100):
+def calculate_harmonic(voltage, harmonic_order, xx = 0, cyc_sample=100):
     """
     计算指定次谐波的有效值
 
