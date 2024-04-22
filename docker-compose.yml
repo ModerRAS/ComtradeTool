@@ -2,7 +2,7 @@ version: '3.8'
 services:
   analogreader:
     restart: always
-    image: ghcr.io/moderras/comtradetool:reader
+    image: ghcr.io/moderras/comtradetool:master-reader
     deploy:
       replicas: 3
     volumes:
