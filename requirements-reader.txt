@@ -1,5 +1,3 @@
-pywebio
 comtrade
 chardet
-numba
 zerorpc

@@ -1,8 +1,31 @@
 version: '3.8'
 services:
+  analogreader:
+    restart: always
+    image: ghcr.io/moderras/comtradetool:reader
+    deploy:
+      replicas: 3
+    volumes:
+      - ./tmp:/tmp
+    labels:
+      - "traefik.enable=true"
+      - "traefik.tcp.routers.analogreader.rule=HostSNI(`*`)"
+      - "traefik.tcp.services.analogreader.loadbalancer.server.port=4242"
+  traefik:
+    image: traefik:v2.5
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.tcp.address=:4242"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
   comtradetool:
     restart: always
     image: ghcr.io/moderras/comtradetool:master
+    environment:
+      - RPC_SERVER=traefik
+    volumes:
+      - ./tmp:/tmp
     ports:
       - "23080:23080"
   watchtower:

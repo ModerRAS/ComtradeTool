@@ -1,75 +1,12 @@
-# import matplotlib.pyplot as plt
-import copy
+
 import math
 import time
-from comtrade import Comtrade
 import os
-import numpy as np
-from scipy.fft import fft, fftfreq
 from numba import jit
 
+from analog_rpc_client import get_analog_path_without_extension
 from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, get_max, print_log, save_to_csv, transform
 from data import *
-
-def load_diagram(file_header: str):
-    cfgFile = file_header + ".CFG"
-    datFile = file_header + ".DAT"
-    rec = Comtrade()
-    try:
-        rec.load(cfgFile, datFile)
-    except UnicodeDecodeError as e:
-        ocfgfile = cfgFile + "cfg"
-        transform(cfgFile,ocfgfile)
-
-        rec.load(ocfgfile, datFile)
-    return rec
-
-
-def get_analog(rec: Comtrade, use_analog_list: list[str]):
-    analog_list = []
-    # 模拟通道的数量
-    analog_count = rec.analog_count
-    # 循环获取模拟通道的名称
-    for i in range(analog_count):
-        chan = rec.analog_channel_ids[i]
-        if chan in use_analog_list:
-            analog_list.append({
-                "name": chan,
-                "id": i
-            })
-    output_analog = []
-    # 循环输出81个模拟量通道的采集数据
-    for use_analog in analog_list:
-        max_value = get_max(rec.analog[use_analog["id"]])
-        output_analog.append({
-            "name": use_analog["name"],
-            "value": max_value
-        })
-        # print(max([abs(), abs(min(analog))]))
-    return output_analog
-
-def get_analog_raw(rec: Comtrade, use_analog_list: list[str]):
-    analog_list = []
-    # 模拟通道的数量
-    analog_count = rec.analog_count
-    # 循环获取模拟通道的名称
-    for i in range(analog_count):
-        chan = rec.analog_channel_ids[i]
-        if chan in use_analog_list:
-            analog_list.append({
-                "name": chan,
-                "id": i
-            })
-    output_analog = []
-    # 循环输出81个模拟量通道的采集数据
-    for use_analog in analog_list:
-        output_analog.append({
-            "name": use_analog["name"],
-            "value": rec.analog[use_analog["id"]]
-        })
-        # print(max([abs(), abs(min(analog))]))
-    return output_analog
-
 
 def get_analog_from_file(filepath):
     def _get_analog_from_file(字段, 量, Child="Child0", get_filename_keyword=get_filename_keyword):
@@ -80,12 +17,8 @@ def get_analog_from_file(filepath):
                 print_log("cannot find {}".format(i))
                 continue
             path_without_extension, extension = os.path.splitext(files[0])
-            rec = load_diagram(path_without_extension)
-            data_list.append({
-                "name": i,
-                "data": get_analog(rec, 量),
-                "row": 量
-            })
+            analog_tmp = get_analog_path_without_extension(i, path_without_extension, 量)
+            data_list.append(analog_tmp)
         return data_list
 
     return _get_analog_from_file
@@ -215,47 +148,9 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
 def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
-def calculate_harmonic(voltage, harmonic_order, base_frequency=50, sampling_rate=1000):
-    """
-    计算指定次谐波的有效值
-
-    参数：
-    voltage: 电压数组，可以是 numpy 数组或普通数组
-    harmonic_order: 谐波次数，如2表示二次谐波，3表示三次谐波，以此类推
-    base_frequency: 基本频率，默认为50Hz
-    sampling_rate: 采样率，默认为1000Hz
-    as_numpy: 是否将输入转换为 numpy 数组，默认为 True
-
-    返回值：
-    harmonic_rms: 指定次谐波的有效值
-    """
-
-    if isinstance(voltage, np.ndarray):
-        voltage_np = voltage  # 输入为 numpy 数组
-    else:
-        voltage_np = np.array(voltage)  # 将输入的电压数组转换为 numpy 数组
-
-    # 傅立叶变换
-    fft_values = fft(voltage_np)
-    freqs = fftfreq(len(fft_values), 1/sampling_rate)
-
-    # 找到指定次谐波频率的索引
-    harmonic_freq = harmonic_order * base_frequency
-    harmonic_idx = np.argmin(np.abs(freqs - harmonic_freq))
-
-    # 计算指定次谐波的幅值
-    harmonic_amplitude = np.abs(fft_values[harmonic_idx])
-
-    # 计算指定次谐波的幅值密度
-    amplitude_density = harmonic_amplitude / (len(fft_values) // 2)
-
-    # 计算指定次谐波的有效值
-    harmonic_rms = amplitude_density / np.sqrt(2)
-
-    return harmonic_rms
 
 @jit
-def calculate_harmonic_fast(voltage, harmonic_order, cyc_sample=100):
+def calculate_harmonic(voltage, harmonic_order, cyc_sample=100):
     """
     计算指定次谐波的有效值
 
@@ -316,4 +211,4 @@ if __name__ == '__main__':
     from pywebio.output import put_progressbar
     # find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
     put_progressbar("Progress", 0, "进度")
-    get_DC_field_analog_quantity(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text4.csv")
+    get_DC_field_analog_quantity(r"D:\WorkSpace\Python\ComtradeTool\testdata", r"C:\tmp\text4.csv")
