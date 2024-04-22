@@ -165,14 +165,15 @@ def calculate_harmonic(voltage, harmonic_order, cyc_sample=100):
     """
     num10 = 0.0
     num11 = 0.0
-    xx = cyc_sample - 1
+    if (xx - (cyc_sample - 1)) < 0:
+        xx = cyc_sample - 1
     for l in range(cyc_sample):
         num12 = voltage[xx - l]
-        num10 += num12 * math.cos((harmonic_order * -float(l) * 2) * math.pi / cyc_sample)
-        num11 += num12 * math.sin((harmonic_order * -float(l) * 2) * math.pi / cyc_sample)
+        num10 += num12 * math.cos((float(harmonic_order) * -1.0 * float(l) * 2.0) * math.pi / cyc_sample)
+        num11 += num12 * math.sin((float(harmonic_order) * -1.0 * float(l) * 2.0) * math.pi / cyc_sample)
     
-    num10 = num10 * math.sqrt(2.0) / cyc_sample
-    num11 = num11 * math.sqrt(2.0) / cyc_sample
+    num10 = num10 * math.sqrt(2.0) / float(cyc_sample)
+    num11 = num11 * math.sqrt(2.0) / float(cyc_sample)
     abs = math.sqrt(num10 * num10 + num11 * num11)
     deg = math.atan2(num10, num11) * 180.0 / math.pi
     return abs
