@@ -2,3 +2,4 @@ pywebio
 comtrade
 chardet
 scipy
+numba

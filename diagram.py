@@ -1,10 +1,12 @@
 # import matplotlib.pyplot as plt
 import copy
+import math
 import time
 from comtrade import Comtrade
 import os
 import numpy as np
 from scipy.fft import fft, fftfreq
+from numba import jit
 
 from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, get_max, print_log, save_to_csv, transform
 from data import *
@@ -251,6 +253,36 @@ def calculate_harmonic(voltage, harmonic_order, base_frequency=50, sampling_rate
     harmonic_rms = amplitude_density / np.sqrt(2)
 
     return harmonic_rms
+
+@jit
+def calculate_harmonic_fast(voltage, harmonic_order, cyc_sample=100):
+    """
+    计算指定次谐波的有效值
+
+    参数：
+    voltage: 电压数组，普通数组
+    harmonic_order: 谐波次数，如2表示二次谐波，3表示三次谐波，以此类推
+    cyc_sample: 采样点数
+
+    返回值：
+    harmonic_rms: 指定次谐波的有效值
+    """
+    num10 = 0.0
+    num11 = 0.0
+    xx = cyc_sample - 1
+    for l in range(cyc_sample):
+        num12 = voltage[xx - l]
+        num10 += num12 * math.cos((harmonic_order * -float(l) * 2) * math.pi / cyc_sample)
+        num11 += num12 * math.sin((harmonic_order * -float(l) * 2) * math.pi / cyc_sample)
+    
+    num10 = num10 * math.sqrt(2.0) / cyc_sample
+    num11 = num11 * math.sqrt(2.0) / cyc_sample
+    abs = math.sqrt(num10 * num10 + num11 * num11)
+    deg = math.atan2(num10, num11) * 180.0 / math.pi
+    return abs
+
+
+
 
 def chunk_array(arr, chunk_size=1000):
     """
