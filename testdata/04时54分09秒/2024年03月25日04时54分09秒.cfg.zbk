@@ -1,0 +1,1829 @@
+[Public Analog_Channel_#1]
+Channel_ID=822B极Ⅱ低端换流变交流系统A相电压Uac_L1
+Phase_ID=A
+Monitored_Component=822B极Ⅱ低端换流变交流系统电压Uac_
+Channel_Units=V
+Channel_Multiplier=0.0077770837
+Channel_Offset=-0.0155541673
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#2]
+Channel_ID=822B极Ⅱ低端换流变交流系统B相电压Uac_L2
+Phase_ID=B
+Monitored_Component=822B极Ⅱ低端换流变交流系统电压Uac_
+Channel_Units=V
+Channel_Multiplier=0.0077775419
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#3]
+Channel_ID=822B极Ⅱ低端换流变交流系统C相电压Uac_L3
+Phase_ID=C
+Monitored_Component=822B极Ⅱ低端换流变交流系统电压Uac_
+Channel_Units=V
+Channel_Multiplier=0.0077775493
+Channel_Offset=0.0077775493
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#4]
+Channel_ID=822B极Ⅱ低端换流变交流系统零序电压Uac_3U0
+Phase_ID=N
+Monitored_Component=822B极Ⅱ低端换流变交流系统电压Uac_
+Channel_Units=V
+Channel_Multiplier=0.0077756546
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#5]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端末屏A相电压UVY1_L1
+Phase_ID=A
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端末屏电压UVY1_
+Channel_Units=V
+Channel_Multiplier=0.0107127950
+Channel_Offset=3.8673191071
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#6]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端末屏B相电压UVY1_L2
+Phase_ID=B
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端末屏电压UVY1_
+Channel_Units=V
+Channel_Multiplier=0.0106267501
+Channel_Offset=5.8553395271
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#7]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端末屏C相电压UVY1_L3
+Phase_ID=C
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端末屏电压UVY1_
+Channel_Units=V
+Channel_Multiplier=0.0104469173
+Channel_Offset=2.3401093483
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#8]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端末屏电压UVY1_ 3Uo
+Phase_ID=N
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端末屏电压UVY1_
+Channel_Units=V
+Channel_Multiplier=0.0104469173
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#9]
+Channel_ID=822B极Ⅱ低端换流变进线开关A相电流I_L1
+Phase_ID=A
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Channel_Units=A
+Channel_Multiplier=0.0017293352
+Channel_Offset=-0.0051880055
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=3000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#10]
+Channel_ID=822B极Ⅱ低端换流变进线开关B相电流I_L2
+Phase_ID=B
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Channel_Units=A
+Channel_Multiplier=0.0017288725
+Channel_Offset=0.0017288725
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=3000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#11]
+Channel_ID=822B极Ⅱ低端换流变进线开关C相电流I_L3
+Phase_ID=C
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Channel_Units=A
+Channel_Multiplier=0.0017302036
+Channel_Offset=-0.0051906109
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=3000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#12]
+Channel_ID=822B极Ⅱ低端换流变进线开关零序电流I_3I0
+Phase_ID=N
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Channel_Units=A
+Channel_Multiplier=0.0017284170
+Channel_Offset=-0.0086420849
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=3000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#13]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧末端套管A相电流Iac_Y_0_L1
+Phase_ID=A
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_
+Channel_Units=A
+Channel_Multiplier=0.0017277368
+Channel_Offset=-0.0069109472
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#14]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧末端套管B相电流Iac_Y_0_L2
+Phase_ID=B
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_
+Channel_Units=A
+Channel_Multiplier=0.0017287777
+Channel_Offset=0.0034575553
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#15]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧末端套管C相电流Iac_Y_0_L3
+Phase_ID=C
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_
+Channel_Units=A
+Channel_Multiplier=0.0017284151
+Channel_Offset=-0.0017284151
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#16]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_ 3Io
+Phase_ID=N
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_
+Channel_Units=A
+Channel_Multiplier=0.0017284151
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#17]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端末屏A相电压UVD1_L1
+Phase_ID=A
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端末屏电压UVD1_
+Channel_Units=V
+Channel_Multiplier=0.0107616121
+Channel_Offset=7.1241874695
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#18]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端末屏B相电压UVD1_L2
+Phase_ID=B
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端末屏电压UVD1_
+Channel_Units=V
+Channel_Multiplier=0.0106445169
+Channel_Offset=9.6013545990
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#19]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端末屏C相电压UVD1_L3
+Phase_ID=C
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端末屏电压UVD1_
+Channel_Units=V
+Channel_Multiplier=0.0106630521
+Channel_Offset=4.8516888618
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#20]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端末屏电压UVD1_ 3Uo
+Phase_ID=N
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端末屏电压UVD1_
+Channel_Units=V
+Channel_Multiplier=0.0106630521
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#21]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端末屏A相电压UVD0_L1
+Phase_ID=A
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端末屏电压UVD0_
+Channel_Units=V
+Channel_Multiplier=0.0105069829
+Channel_Offset=3.7404861450
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#22]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端末屏B相电压UVD0_L2
+Phase_ID=B
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端末屏电压UVD0_
+Channel_Units=V
+Channel_Multiplier=0.0106319785
+Channel_Offset=5.6668448448
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#23]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端末屏C相电压UVD0_L3
+Phase_ID=C
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端末屏电压UVD0_
+Channel_Units=V
+Channel_Multiplier=0.0107120099
+Channel_Offset=6.7592782974
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#24]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端末屏电压UVD0_ 3Uo
+Phase_ID=N
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端末屏电压UVD0_
+Channel_Units=V
+Channel_Multiplier=0.0107120099
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#25]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端套管A相电流IVY_1_L1
+Phase_ID=A
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_
+Channel_Units=A
+Channel_Multiplier=0.0017290885
+Channel_Offset=-0.0051872656
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#26]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端套管B相电流IVY_1_L2
+Phase_ID=B
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_
+Channel_Units=A
+Channel_Multiplier=0.0017288883
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#27]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端套管C相电流IVY_1_L3
+Phase_ID=C
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_
+Channel_Units=A
+Channel_Multiplier=0.0017279595
+Channel_Offset=-0.0034559190
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#28]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_ 3Io
+Phase_ID=N
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_
+Channel_Units=A
+Channel_Multiplier=0.0017279595
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#29]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧末端套管A相电流Iac_D_0_L1
+Phase_ID=A
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_
+Channel_Units=A
+Channel_Multiplier=0.0017287104
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#30]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧末端套管B相电流Iac_D_0_L2
+Phase_ID=B
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_
+Channel_Units=A
+Channel_Multiplier=0.0017285792
+Channel_Offset=-0.0051857373
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#31]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧末端套管C相电流Iac_D_0_L3
+Phase_ID=C
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_
+Channel_Units=A
+Channel_Multiplier=0.0017293147
+Channel_Offset=-0.0086465729
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#32]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_ 3Io
+Phase_ID=N
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_
+Channel_Units=A
+Channel_Multiplier=0.0017293147
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#33]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端末屏A相电压UVY0_L1
+Phase_ID=A
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端末屏电压UVY0_
+Channel_Units=V
+Channel_Multiplier=0.0106903054
+Channel_Offset=9.0226173401
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#34]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端末屏B相电压UVY0_L2
+Phase_ID=B
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端末屏电压UVY0_
+Channel_Units=V
+Channel_Multiplier=0.0107069835
+Channel_Offset=8.3086194992
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#35]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端末屏C相电压UVY0_L3
+Phase_ID=C
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端末屏电压UVY0_
+Channel_Units=V
+Channel_Multiplier=0.0106294937
+Channel_Offset=3.7415816784
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#36]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端末屏电压UVY0_ 3Uo
+Phase_ID=N
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端末屏电压UVY0_
+Channel_Units=V
+Channel_Multiplier=0.0106294937
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=167350.0000000000
+Channel_Ratio_Secondary=110.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#37]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端套管A相电流IVD_1_L1
+Phase_ID=A
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_
+Channel_Units=A
+Channel_Multiplier=0.0017283479
+Channel_Offset=-0.0017283479
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#38]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端套管B相电流IVD_1_L2
+Phase_ID=B
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_
+Channel_Units=A
+Channel_Multiplier=0.0017292784
+Channel_Offset=-0.0017292784
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#39]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端套管C相电流IVD_1_L3
+Phase_ID=C
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_
+Channel_Units=A
+Channel_Multiplier=0.0017286810
+Channel_Offset=-0.0034573621
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#40]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_ 3Io
+Phase_ID=N
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_
+Channel_Units=A
+Channel_Multiplier=0.0017286810
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#41]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧中性点电流IGNDD
+Phase_ID=N
+Monitored_Component=
+Channel_Units=A
+Channel_Multiplier=0.0017287225
+Channel_Offset=-0.0017287225
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#42]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧中性点电流IGNDY
+Phase_ID=N
+Monitored_Component=
+Channel_Units=A
+Channel_Multiplier=0.0017295148
+Channel_Offset=-0.0034590296
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#43]
+Channel_ID=6#线路Ic
+Phase_ID=N
+Monitored_Component=
+Channel_Units=A
+Channel_Multiplier=0.0017288363
+Channel_Offset=-0.0051865093
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#44]
+Channel_ID=6#线路3Io
+Phase_ID=N
+Monitored_Component=6#线路
+Channel_Units=A
+Channel_Multiplier=0.0017307360
+Channel_Offset=-0.0051922081
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#45]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧首端套管A相电流Iac_Y_1_L1
+Phase_ID=A
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧首端套管电流Iac_Y_1_
+Channel_Units=A
+Channel_Multiplier=0.0017287674
+Channel_Offset=-0.0051863021
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#46]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧首端套管B相电流Iac_Y_1_L2
+Phase_ID=B
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧首端套管电流Iac_Y_1_
+Channel_Units=A
+Channel_Multiplier=0.0017301467
+Channel_Offset=-0.0069205868
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#47]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧首端套管C相电流Iac_Y_1_L3
+Phase_ID=C
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧首端套管电流Iac_Y_1_
+Channel_Units=A
+Channel_Multiplier=0.0017312170
+Channel_Offset=-0.0069248681
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#48]
+Channel_ID=8221B极Ⅱ低端换流变星接网侧首端套管零序电流Iac_Y_1_3I0
+Phase_ID=N
+Monitored_Component=8221B极Ⅱ低端换流变星接网侧首端套管电流Iac_Y_1_
+Channel_Units=A
+Channel_Multiplier=0.0017292196
+Channel_Offset=-0.0017292196
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#49]
+Channel_ID=6#母线Ua
+Phase_ID=A
+Monitored_Component=6#母线
+Channel_Units=V
+Channel_Multiplier=0.0077810413
+Channel_Offset=-0.0233431235
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#50]
+Channel_ID=6#母线Ub
+Phase_ID=B
+Monitored_Component=6#母线
+Channel_Units=V
+Channel_Multiplier=0.0077804816
+Channel_Offset=0.0077804816
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#51]
+Channel_ID=6#母线Uc
+Phase_ID=C
+Monitored_Component=6#母线
+Channel_Units=V
+Channel_Multiplier=0.0077798199
+Channel_Offset=0.0233394597
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#52]
+Channel_ID=6#母线3Uo
+Phase_ID=N
+Monitored_Component=6#母线
+Channel_Units=V
+Channel_Multiplier=0.0077792830
+Channel_Offset=-0.0077792830
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#53]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端套管A相电流IVY_0_L1
+Phase_ID=A
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端套管电流IVY_0_
+Channel_Units=A
+Channel_Multiplier=0.0017287018
+Channel_Offset=-0.0034574035
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#54]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端套管B相电流IVY_0_L2
+Phase_ID=B
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端套管电流IVY_0_
+Channel_Units=A
+Channel_Multiplier=0.0017305801
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#55]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端套管C相电流IVY_0_L3
+Phase_ID=C
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端套管电流IVY_0_
+Channel_Units=A
+Channel_Multiplier=0.0017313412
+Channel_Offset=-0.0051940237
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#56]
+Channel_ID=8221B极Ⅱ低端换流变星接阀侧末端套管零序电流IVY_0_3I0
+Phase_ID=N
+Monitored_Component=8221B极Ⅱ低端换流变星接阀侧末端套管电流IVY_0_
+Channel_Units=A
+Channel_Multiplier=0.0017294732
+Channel_Offset=-0.0017294732
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=6000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#57]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧首端套管A相电流Iac_D_1_L1
+Phase_ID=A
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧首端套管电流Iac_D_1_
+Channel_Units=A
+Channel_Multiplier=0.0017270532
+Channel_Offset=-0.0034541064
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#58]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧首端套管B相电流Iac_D_1_L2
+Phase_ID=B
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧首端套管电流Iac_D_1_
+Channel_Units=A
+Channel_Multiplier=0.0017269270
+Channel_Offset=-0.0034538540
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#59]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧首端套管C相电流Iac_D_1_L3
+Phase_ID=C
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧首端套管电流Iac_D_1_
+Channel_Units=A
+Channel_Multiplier=0.0017281062
+Channel_Offset=-0.0069124247
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#60]
+Channel_ID=8222B极Ⅱ低端换流变角接网侧首端套管零序电流Iac_D_1_3I0
+Phase_ID=N
+Monitored_Component=8222B极Ⅱ低端换流变角接网侧首端套管电流Iac_D_1_
+Channel_Units=A
+Channel_Multiplier=0.0017304850
+Channel_Offset=-0.0034609700
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#61]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端套管A相电流IVD_0_L1
+Phase_ID=A
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端套管电流IVD_0_
+Channel_Units=A
+Channel_Multiplier=0.0017270445
+Channel_Offset=-0.0034540889
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#62]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端套管B相电流IVD_0_L2
+Phase_ID=B
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端套管电流IVD_0_
+Channel_Units=A
+Channel_Multiplier=0.0017287224
+Channel_Offset=-0.0069148894
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#63]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端套管C相电流IVD_0_L3
+Phase_ID=C
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端套管电流IVD_0_
+Channel_Units=A
+Channel_Multiplier=0.0017283080
+Channel_Offset=-0.0069132322
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#64]
+Channel_ID=8222B极Ⅱ低端换流变角接阀侧末端套管零序电流IVD_0_3I0
+Phase_ID=N
+Monitored_Component=8222B极Ⅱ低端换流变角接阀侧末端套管电流IVD_0_
+Channel_Units=A
+Channel_Multiplier=0.0017267354
+Channel_Offset=-0.0017267354
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=4000.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#65]
+Channel_ID=7#母线Ua
+Phase_ID=A
+Monitored_Component=7#母线
+Channel_Units=V
+Channel_Multiplier=0.0077802385
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#66]
+Channel_ID=7#母线Ub
+Phase_ID=B
+Monitored_Component=7#母线
+Channel_Units=V
+Channel_Multiplier=0.0077778483
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#67]
+Channel_ID=7#母线Uc
+Phase_ID=C
+Monitored_Component=7#母线
+Channel_Units=V
+Channel_Multiplier=0.0077779959
+Channel_Offset=0.0077779959
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#68]
+Channel_ID=7#母线3Uo
+Phase_ID=N
+Monitored_Component=7#母线
+Channel_Units=V
+Channel_Multiplier=0.0077763610
+Channel_Offset=0.0077763610
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=220000.0000000000
+Channel_Ratio_Secondary=100.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#69]
+Channel_ID=11#线路Ia
+Phase_ID=A
+Monitored_Component=11#线路
+Channel_Units=A
+Channel_Multiplier=0.0017287995
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#70]
+Channel_ID=11#线路Ib
+Phase_ID=B
+Monitored_Component=11#线路
+Channel_Units=A
+Channel_Multiplier=0.0017288199
+Channel_Offset=-0.0034576398
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#71]
+Channel_ID=11#线路Ic
+Phase_ID=C
+Monitored_Component=11#线路
+Channel_Units=A
+Channel_Multiplier=0.0017283784
+Channel_Offset=-0.0051851352
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#72]
+Channel_ID=11#线路3Io
+Phase_ID=N
+Monitored_Component=11#线路
+Channel_Units=A
+Channel_Multiplier=0.0017295284
+Channel_Offset=-0.0017295284
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#73]
+Channel_ID=12#线路Ia
+Phase_ID=A
+Monitored_Component=12#线路
+Channel_Units=A
+Channel_Multiplier=0.0017288659
+Channel_Offset=-0.0051865978
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#74]
+Channel_ID=12#线路Ib
+Phase_ID=B
+Monitored_Component=12#线路
+Channel_Units=A
+Channel_Multiplier=0.0017272477
+Channel_Offset=0.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#75]
+Channel_ID=12#线路Ic
+Phase_ID=C
+Monitored_Component=12#线路
+Channel_Units=A
+Channel_Multiplier=0.0017273361
+Channel_Offset=-0.0051820083
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#76]
+Channel_ID=12#线路3Io
+Phase_ID=N
+Monitored_Component=12#线路
+Channel_Units=A
+Channel_Multiplier=0.0017290043
+Channel_Offset=-0.0034580086
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=2500.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#77]
+Channel_ID=A段直流电源
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0194063559
+Channel_Offset=4.7351512909
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#78]
+Channel_ID=B段直流电源
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0194421988
+Channel_Offset=4.9383187294
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#79]
+Channel_ID=C段直流电源
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0194054116
+Channel_Offset=3.4153523445
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#80]
+Channel_ID=4#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0191460848
+Channel_Offset=-0.0382921696
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#81]
+Channel_ID=5#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0190330278
+Channel_Offset=-3.8637044430
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#82]
+Channel_ID=6#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0192531701
+Channel_Offset=-5.3138747215
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#83]
+Channel_ID=7#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0196425058
+Channel_Offset=11.2747983932
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#84]
+Channel_ID=8#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0195871033
+Channel_Offset=11.6151523590
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#85]
+Channel_ID=9#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0195767507
+Channel_Offset=7.6936631203
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#86]
+Channel_ID=10#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0193148069
+Channel_Offset=-0.7146478891
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#87]
+Channel_ID=11#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0193265658
+Channel_Offset=-0.5218172669
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#88]
+Channel_ID=12#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0196684878
+Channel_Offset=13.0008707047
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#89]
+Channel_ID=13#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0192125719
+Channel_Offset=-0.7300777435
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#90]
+Channel_ID=14#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0191192701
+Channel_Offset=-8.0492134094
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#91]
+Channel_ID=15#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0197226014
+Channel_Offset=12.4844064713
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#92]
+Channel_ID=16#直流电压通道
+Phase_ID=
+Monitored_Component=
+Channel_Units=V
+Channel_Multiplier=0.0197994318
+Channel_Offset=11.7212638855
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=200.0000000000
+Channel_Ratio_Secondary=200.0000000000
+Data_Primary_Secondary=S
+
+[Public Analog_Channel_#93]
+Channel_ID=频率曲线
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变交流系统电压Uac_
+Channel_Units=Hz
+Channel_Multiplier=0.0010000000
+Channel_Offset=50.0000000000
+Channel_Skew=0.0000000000
+Range_Minimum_Limit_Value=-32767
+Range_Maximum_Limit_Value=32767
+Channel_Ratio_Primary=1.0000000000
+Channel_Ratio_Secondary=1.0000000000
+Data_Primary_Secondary=S
+
+
+[Public Status_Channel_#1]
+Channel_ID=T011断路器A相分位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#2]
+Channel_ID=T011断路器B相分位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#3]
+Channel_ID=T011断路器C相分位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#4]
+Channel_ID=T011断路器A相合位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#5]
+Channel_ID=T011断路器B相合位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#6]
+Channel_ID=T011断路器C相合位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#7]
+Channel_ID=T012断路器A相分位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#8]
+Channel_ID=T012断路器B相分位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#9]
+Channel_ID=T012断路器C相分位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#10]
+Channel_ID=T012断路器A相合位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#11]
+Channel_ID=T012断路器B相合位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#12]
+Channel_ID=T012断路器C相合位
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#13]
+Channel_ID=T011断路器开关保护A相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#14]
+Channel_ID=T011断路器开关保护B相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#15]
+Channel_ID=T011断路器开关保护C相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#16]
+Channel_ID=T011断路器开关保护失灵动作
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#17]
+Channel_ID=T011断路器操作箱三相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#18]
+Channel_ID=T012断路器开关保护A相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#19]
+Channel_ID=T012断路器开关保护B相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#20]
+Channel_ID=T012断路器开关保护C相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#21]
+Channel_ID=T012断路器开关保护失灵动作
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#22]
+Channel_ID=T012断路器操作箱三相跳闸
+Phase_ID=
+Monitored_Component=822B极Ⅱ低端换流变进线开关电流I_
+Normal_State=0
+
+[Public Status_Channel_#23]
+Channel_ID=系统保护协控总站 PCS-992II A套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#24]
+Channel_ID=系统保护协控总站 SCS-500E B套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#25]
+Channel_ID=系统保护直流协控主站 PCS-992II A套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#26]
+Channel_ID=系统保护直流协控主站 SCS-500E B套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#27]
+Channel_ID=系统保护交流协控主站 PCS-992II A套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#28]
+Channel_ID=系统保护交流协控主站 SCS-500E B套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#29]
+Channel_ID=系统保护抽蓄协控主站 PCS-992II A套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#30]
+Channel_ID=系统保护抽蓄协控主站 SCS-500E B套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#31]
+Channel_ID=系统保护储能协控主站 PCS-992II A套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#32]
+Channel_ID=系统保护储能协控主站 SCS-500E B套稳控装置动作
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#33]
+Channel_ID=安控直流主站 PCS-992M A套稳控装置动作信号
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#34]
+Channel_ID=安控直流主站 PCS-992M B套稳控装置动作信号
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#35]
+Channel_ID=切负荷子站 PCS-992M A套稳控装置动作信号
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#36]
+Channel_ID=切负荷子站 PCS-992M B套稳控装置动作信号
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#37]
+Channel_ID=切负荷主站 PCS-992M A套稳控装置动作信号
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+[Public Status_Channel_#38]
+Channel_ID=切负荷主站 PCS-992M B套稳控装置动作信号
+Phase_ID=
+Monitored_Component=
+Normal_State=0
+
+
+[ZYHD Analog_Channels_Parameter]
+CHNL_INFO_#1=1, 1, 822B极Ⅱ低端换流变交流系统A相电压Uac_L1, TV, 50.000, 1000.000, kV, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#2=2, 2, 822B极Ⅱ低端换流变交流系统B相电压Uac_L2, TV, 50.000, 1000.000, kV, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#3=3, 3, 822B极Ⅱ低端换流变交流系统C相电压Uac_L3, TV, 50.000, 1000.000, kV, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#4=4, 4, 822B极Ⅱ低端换流变交流系统零序电压Uac_3U0, TV, 50.000, 1000000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#5=5, 5, 8221B极Ⅱ低端换流变星接阀侧首端末屏A相电压UVY1_L1, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#6=6, 6, 8221B极Ⅱ低端换流变星接阀侧首端末屏B相电压UVY1_L2, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#7=7, 7, 8221B极Ⅱ低端换流变星接阀侧首端末屏C相电压UVY1_L3, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#8=8, 0, 8221B极Ⅱ低端换流变星接阀侧首端末屏电压UVY1_ 3Uo, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#9=9, 9, 822B极Ⅱ低端换流变进线开关A相电流I_L1, TA, 50.000, 3000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#10=10, 10, 822B极Ⅱ低端换流变进线开关B相电流I_L2, TA, 50.000, 3000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#11=11, 11, 822B极Ⅱ低端换流变进线开关C相电流I_L3, TA, 50.000, 3000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#12=12, 12, 822B极Ⅱ低端换流变进线开关零序电流I_3I0, TA, 50.000, 3000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#13=13, 13, 8221B极Ⅱ低端换流变星接网侧末端套管A相电流Iac_Y_0_L1, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#14=14, 14, 8221B极Ⅱ低端换流变星接网侧末端套管B相电流Iac_Y_0_L2, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#15=15, 15, 8221B极Ⅱ低端换流变星接网侧末端套管C相电流Iac_Y_0_L3, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#16=16, 0, 8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_ 3Io, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#17=17, 17, 8222B极Ⅱ低端换流变角接阀侧首端末屏A相电压UVD1_L1, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#18=18, 18, 8222B极Ⅱ低端换流变角接阀侧首端末屏B相电压UVD1_L2, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#19=19, 19, 8222B极Ⅱ低端换流变角接阀侧首端末屏C相电压UVD1_L3, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#20=20, 0, 8222B极Ⅱ低端换流变角接阀侧首端末屏电压UVD1_ 3Uo, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#21=21, 21, 8222B极Ⅱ低端换流变角接阀侧末端末屏A相电压UVD0_L1, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#22=22, 22, 8222B极Ⅱ低端换流变角接阀侧末端末屏B相电压UVD0_L2, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#23=23, 23, 8222B极Ⅱ低端换流变角接阀侧末端末屏C相电压UVD0_L3, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#24=24, 0, 8222B极Ⅱ低端换流变角接阀侧末端末屏电压UVD0_ 3Uo, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#25=25, 25, 8221B极Ⅱ低端换流变星接阀侧首端套管A相电流IVY_1_L1, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#26=26, 26, 8221B极Ⅱ低端换流变星接阀侧首端套管B相电流IVY_1_L2, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#27=27, 27, 8221B极Ⅱ低端换流变星接阀侧首端套管C相电流IVY_1_L3, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#28=28, 0, 8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_ 3Io, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#29=29, 29, 8222B极Ⅱ低端换流变角接网侧末端套管A相电流Iac_D_0_L1, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#30=30, 30, 8222B极Ⅱ低端换流变角接网侧末端套管B相电流Iac_D_0_L2, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#31=31, 31, 8222B极Ⅱ低端换流变角接网侧末端套管C相电流Iac_D_0_L3, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#32=32, 0, 8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_ 3Io, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#33=33, 33, 8221B极Ⅱ低端换流变星接阀侧末端末屏A相电压UVY0_L1, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#34=34, 34, 8221B极Ⅱ低端换流变星接阀侧末端末屏B相电压UVY0_L2, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#35=35, 35, 8221B极Ⅱ低端换流变星接阀侧末端末屏C相电压UVY0_L3, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#36=36, 0, 8221B极Ⅱ低端换流变星接阀侧末端末屏电压UVY0_ 3Uo, TV, 50.000, 167350.000, V, 110.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#37=37, 37, 8222B极Ⅱ低端换流变角接阀侧首端套管A相电流IVD_1_L1, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#38=38, 38, 8222B极Ⅱ低端换流变角接阀侧首端套管B相电流IVD_1_L2, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#39=39, 39, 8222B极Ⅱ低端换流变角接阀侧首端套管C相电流IVD_1_L3, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#40=40, 0, 8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_ 3Io, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#41=41, 41, 8222B极Ⅱ低端换流变角接网侧中性点电流IGNDD, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#42=42, 42, 8221B极Ⅱ低端换流变星接网侧中性点电流IGNDY, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#43=43, 43, 6#线路Ic, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#44=44, 44, 6#线路3Io, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#45=45, 45, 8221B极Ⅱ低端换流变星接网侧首端套管A相电流Iac_Y_1_L1, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#46=46, 46, 8221B极Ⅱ低端换流变星接网侧首端套管B相电流Iac_Y_1_L2, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#47=47, 47, 8221B极Ⅱ低端换流变星接网侧首端套管C相电流Iac_Y_1_L3, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#48=48, 48, 8221B极Ⅱ低端换流变星接网侧首端套管零序电流Iac_Y_1_3I0, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#49=49, 49, 6#母线Ua, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#50=50, 50, 6#母线Ub, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#51=51, 51, 6#母线Uc, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#52=52, 52, 6#母线3Uo, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#53=53, 53, 8221B极Ⅱ低端换流变星接阀侧末端套管A相电流IVY_0_L1, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#54=54, 54, 8221B极Ⅱ低端换流变星接阀侧末端套管B相电流IVY_0_L2, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#55=55, 55, 8221B极Ⅱ低端换流变星接阀侧末端套管C相电流IVY_0_L3, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#56=56, 56, 8221B极Ⅱ低端换流变星接阀侧末端套管零序电流IVY_0_3I0, TA, 50.000, 6000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#57=57, 57, 8222B极Ⅱ低端换流变角接网侧首端套管A相电流Iac_D_1_L1, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#58=58, 58, 8222B极Ⅱ低端换流变角接网侧首端套管B相电流Iac_D_1_L2, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#59=59, 59, 8222B极Ⅱ低端换流变角接网侧首端套管C相电流Iac_D_1_L3, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#60=60, 60, 8222B极Ⅱ低端换流变角接网侧首端套管零序电流Iac_D_1_3I0, TA, 50.000, 1000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#61=61, 61, 8222B极Ⅱ低端换流变角接阀侧末端套管A相电流IVD_0_L1, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#62=62, 62, 8222B极Ⅱ低端换流变角接阀侧末端套管B相电流IVD_0_L2, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#63=63, 63, 8222B极Ⅱ低端换流变角接阀侧末端套管C相电流IVD_0_L3, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#64=64, 64, 8222B极Ⅱ低端换流变角接阀侧末端套管零序电流IVD_0_3I0, TA, 50.000, 4000.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#65=65, 65, 7#母线Ua, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#66=66, 66, 7#母线Ub, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#67=67, 67, 7#母线Uc, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#68=68, 68, 7#母线3Uo, TV, 50.000, 220000.000, V, 100.000, V, 1.00000000, 0.00000000, 
+CHNL_INFO_#69=69, 69, 11#线路Ia, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#70=70, 70, 11#线路Ib, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#71=71, 71, 11#线路Ic, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#72=72, 72, 11#线路3Io, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#73=73, 73, 12#线路Ia, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#74=74, 74, 12#线路Ib, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#75=75, 75, 12#线路Ic, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#76=76, 76, 12#线路3Io, TA, 50.000, 2500.000, A, 1.000, A, 1.00000000, 0.00000000, 
+CHNL_INFO_#77=77, 77, A段直流电源, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#78=78, 78, B段直流电源, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#79=79, 79, C段直流电源, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#80=80, 80, 4#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#81=81, 81, 5#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#82=82, 82, 6#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#83=83, 83, 7#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#84=84, 84, 8#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#85=85, 85, 9#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#86=86, 86, 10#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#87=87, 87, 11#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#88=88, 88, 12#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#89=89, 89, 13#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#90=90, 90, 14#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#91=91, 91, 15#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#92=92, 92, 16#直流电压通道, DV, 50.000, 200.000, V, 1.000, V, 1.00000000, 0.00000000, V
+CHNL_INFO_#93=93, 0, 频率曲线, FQ, 50.000, 1.000, Hz, 1.000, Hz, 1.00000000, 0.00000000, 
+
+[ZYHD Status_Channels_Parameter]
+CHNL_INFO_#1=1, 1, T011断路器A相分位, Breaker_Pos, Jump_A_Break, 
+CHNL_INFO_#2=2, 2, T011断路器B相分位, Breaker_Pos, Jump_B_Break, 
+CHNL_INFO_#3=3, 3, T011断路器C相分位, Breaker_Pos, Jump_C_Break, 
+CHNL_INFO_#4=4, 4, T011断路器A相合位, Breaker_Pos, Jump_A_Close, 
+CHNL_INFO_#5=5, 5, T011断路器B相合位, Breaker_Pos, Jump_B_Close, 
+CHNL_INFO_#6=6, 6, T011断路器C相合位, Breaker_Pos, Jump_C_Close, 
+CHNL_INFO_#7=7, 7, T012断路器A相分位, Breaker_Pos, Jump_A_Break, 
+CHNL_INFO_#8=8, 8, T012断路器B相分位, Breaker_Pos, Jump_B_Break, 
+CHNL_INFO_#9=9, 9, T012断路器C相分位, Breaker_Pos, Jump_C_Break, 
+CHNL_INFO_#10=10, 10, T012断路器A相合位, Breaker_Pos, Jump_A_Close, 
+CHNL_INFO_#11=11, 11, T012断路器B相合位, Breaker_Pos, Jump_B_Close, 
+CHNL_INFO_#12=12, 12, T012断路器C相合位, Breaker_Pos, Jump_C_Close, 
+CHNL_INFO_#13=13, 13, T011断路器开关保护A相跳闸, Relay_Act, Jump_A, 
+CHNL_INFO_#14=14, 14, T011断路器开关保护B相跳闸, Relay_Act, Jump_B, 
+CHNL_INFO_#15=15, 15, T011断路器开关保护C相跳闸, Relay_Act, Jump_C, 
+CHNL_INFO_#16=16, 16, T011断路器开关保护失灵动作, Relay_Act, Normal, 
+CHNL_INFO_#17=17, 17, T011断路器操作箱三相跳闸, Relay_Act, Normal, 
+CHNL_INFO_#18=18, 19, T012断路器开关保护A相跳闸, Relay_Act, Jump_A, 
+CHNL_INFO_#19=19, 20, T012断路器开关保护B相跳闸, Relay_Act, Jump_B, 
+CHNL_INFO_#20=20, 21, T012断路器开关保护C相跳闸, Relay_Act, Jump_C, 
+CHNL_INFO_#21=21, 22, T012断路器开关保护失灵动作, Relay_Act, Normal, 
+CHNL_INFO_#22=22, 23, T012断路器操作箱三相跳闸, Relay_Act, Normal, 
+CHNL_INFO_#23=23, 25, 系统保护协控总站 PCS-992II A套稳控装置动作, Other, Normal, 
+CHNL_INFO_#24=24, 26, 系统保护协控总站 SCS-500E B套稳控装置动作, Other, Normal, 
+CHNL_INFO_#25=25, 27, 系统保护直流协控主站 PCS-992II A套稳控装置动作, Other, Normal, 
+CHNL_INFO_#26=26, 28, 系统保护直流协控主站 SCS-500E B套稳控装置动作, Other, Normal, 
+CHNL_INFO_#27=27, 29, 系统保护交流协控主站 PCS-992II A套稳控装置动作, Other, Normal, 
+CHNL_INFO_#28=28, 30, 系统保护交流协控主站 SCS-500E B套稳控装置动作, Other, Normal, 
+CHNL_INFO_#29=29, 31, 系统保护抽蓄协控主站 PCS-992II A套稳控装置动作, Other, Normal, 
+CHNL_INFO_#30=30, 32, 系统保护抽蓄协控主站 SCS-500E B套稳控装置动作, Other, Normal, 
+CHNL_INFO_#31=31, 33, 系统保护储能协控主站 PCS-992II A套稳控装置动作, Other, Normal, 
+CHNL_INFO_#32=32, 34, 系统保护储能协控主站 SCS-500E B套稳控装置动作, Other, Normal, 
+CHNL_INFO_#33=33, 65, 安控直流主站 PCS-992M A套稳控装置动作信号, Other, Normal, 
+CHNL_INFO_#34=34, 66, 安控直流主站 PCS-992M B套稳控装置动作信号, Other, Normal, 
+CHNL_INFO_#35=35, 67, 切负荷子站 PCS-992M A套稳控装置动作信号, Other, Normal, 
+CHNL_INFO_#36=36, 68, 切负荷子站 PCS-992M B套稳控装置动作信号, Other, Normal, 
+CHNL_INFO_#37=37, 69, 切负荷主站 PCS-992M A套稳控装置动作信号, Other, Normal, 
+CHNL_INFO_#38=38, 70, 切负荷主站 PCS-992M B套稳控装置动作信号, Other, Normal, 
+
+[ZYHD Line_#1]
+DEV_ID=-2147483646,822B极Ⅱ低端换流变进线开关电流I_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=9, 10, 11, 12, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=1, 2, 3, 4
+STATUS_CHNS=1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
+BUS_ID_#1=1073741825
+
+[ZYHD Line_#2]
+DEV_ID=-2147483639,8221B极Ⅱ低端换流变星接网侧末端套管电流Iac_Y_0_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=13, 14, 15, 16, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+
+[ZYHD Line_#3]
+DEV_ID=-2147483638,8221B极Ⅱ低端换流变星接阀侧首端套管电流IVY_1_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=25, 26, 27, 28, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=5, 6, 7, 8
+BUS_ID_#1=1073741827
+
+[ZYHD Line_#4]
+DEV_ID=-2147483637,8222B极Ⅱ低端换流变角接网侧末端套管电流Iac_D_0_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=29, 30, 31, 32, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=5, 6, 7, 8
+BUS_ID_#1=1073741827
+
+[ZYHD Line_#5]
+DEV_ID=-2147483636,8222B极Ⅱ低端换流变角接阀侧首端套管电流IVD_1_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=37, 38, 39, 40, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=17, 18, 19, 20
+BUS_ID_#1=1073741828
+
+[ZYHD Line_#6]
+DEV_ID=-2147483635,6#线路
+SYS_ID=
+OBJECT_TYPE=LINE
+LENGTH=100.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=0, 0, 0, 44, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=17, 18, 19, 20
+BUS_ID_#1=1073741828
+
+[ZYHD Line_#7]
+DEV_ID=-2147483634,8221B极Ⅱ低端换流变星接网侧首端套管电流Iac_Y_1_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=45, 46, 47, 48, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+
+[ZYHD Line_#8]
+DEV_ID=-2147483633,8221B极Ⅱ低端换流变星接阀侧末端套管电流IVY_0_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=53, 54, 55, 56, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+
+[ZYHD Line_#9]
+DEV_ID=-2147483632,8222B极Ⅱ低端换流变角接网侧首端套管电流Iac_D_1_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=57, 58, 59, 60, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+
+[ZYHD Line_#10]
+DEV_ID=-2147483631,8222B极Ⅱ低端换流变角接阀侧末端套管电流IVD_0_
+SYS_ID=
+OBJECT_TYPE=UNKNOWN
+LENGTH=0.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=61, 62, 63, 64, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+
+[ZYHD Line_#11]
+DEV_ID=-2147483630,11#线路
+SYS_ID=
+OBJECT_TYPE=LINE
+LENGTH=100.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=69, 70, 71, 72, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=49, 50, 51, 52
+BUS_ID_#1=1073741831
+
+[ZYHD Line_#12]
+DEV_ID=-2147483629,12#线路
+SYS_ID=
+OBJECT_TYPE=LINE
+LENGTH=100.000(km)
+RX=0.1000000015(Ω/km), 0.4000000060(Ω/km), 0.3000000119(Ω/km), 1.2000000477(Ω/km)
+CG=0.0000000000(μf/km), 0.0000000000(S/km), 0.0000000000(μf/km), 0.0000000000(S/km)
+MRX=0.0000000000(Ω/km), 0.0000000000(Ω/km)
+REACTOR=NO
+TA_CHNS=73, 74, 75, 76, 1
+TA_CHNS_#2=0, 0, 0, 0, 1
+TV_CHNS=65, 66, 67, 68
+BUS_ID_#1=1073741832
+
+
+[ZYHD Expression]
+
