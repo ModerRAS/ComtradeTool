@@ -5,8 +5,9 @@ import os
 from numba import jit
 
 from analog_rpc_client import get_analog_path_without_extension
-from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, get_max, print_log, save_to_csv, transform
+from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, save_to_csv
 from data import *
+from log import print_log
 
 def get_analog_from_file(filepath):
     def _get_analog_from_file(字段, 量, Child="Child0", get_filename_keyword=get_filename_keyword):

@@ -2,4 +2,4 @@ pywebio
 comtrade
 chardet
 numba
-zerorpc
+simplejsonrpc
