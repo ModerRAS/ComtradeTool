@@ -1,4 +1,5 @@
-import json
+import base64
+import pickle
 import os
 import xmlrpc.client
 
@@ -11,5 +12,5 @@ def get_analog_path_without_extension(name, path_without_extension: str, use_ana
 
 def get_analog_raw(filepath: str, use_analog_list: list[str]):
     proxy = xmlrpc.client.ServerProxy(rpc_server)
-    return proxy.get_analog_path_without_extension(filepath, list(use_analog_list))
+    return pickle.loads(base64.b64decode(proxy.get_analog_raw(filepath, use_analog_list)))
 

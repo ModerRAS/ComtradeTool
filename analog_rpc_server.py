@@ -1,3 +1,5 @@
+import base64
+import pickle
 from comtrade import Comtrade
 
 from util import get_max, transform
@@ -69,7 +71,7 @@ def get_analog_raw(filepath: str, use_analog_list: list[str]):
             "value": rec.analog[use_analog["id"]]
         })
         # print(max([abs(), abs(min(analog))]))
-    return output_analog
+    return base64.b64encode(pickle.dumps(output_analog)).decode('utf-8')
 
 if __name__ == '__main__':
     # 创建 ZeroRPC 服务器并运行
