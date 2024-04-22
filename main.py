@@ -41,7 +41,6 @@ def process_content(process_func=find_diagram):
     f = file_upload("上传波形文件压缩包", accept="application/zip")
     start_time = time.time()
     put_progressbar("Progress", 0, "进度")
-    put_markdown("处理中。。。。。。")
     random_name = generate_random_string(10)
     open('/tmp/'+ random_name + ".zip", 'wb').write(f['content'])
     unzip_file('/tmp/'+ random_name + ".zip", '/tmp/'+ random_name)
