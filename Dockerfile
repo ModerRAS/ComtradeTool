@@ -8,7 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # 安装依赖包
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get install libzmq3-dev && \
+    pip install --no-cache-dir -r requirements.txt
 
 # 暴露端口
 EXPOSE 23080
