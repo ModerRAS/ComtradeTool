@@ -168,6 +168,13 @@ def get_all_harmonic(filepath: str):
     all_harmonic = [_process_file(file) for file in all_files]
     return all_harmonic
 
+def generate_all_harmonic_list(all_harmonic: list):
+    """
+    export object type:
+    [fmttime, wave_name, number_1..9_of_harmonic]
+    """
+    
+    pass
 
 
 if __name__ == '__main__':
