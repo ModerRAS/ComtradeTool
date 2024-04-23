@@ -3,7 +3,9 @@ import time
 import unittest
 
 from analog_rpc_client import get_analog_raw
-from diagram import calculate_harmonic, find_diagram
+from analog_rpc_server import load_diagram
+from diagram import find_diagram
+from analog_rpc_client import calculate_harmonic
 
 class TestDiagram(unittest.TestCase):
     def compare_csv(self, file1, file2):

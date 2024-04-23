@@ -144,3 +144,33 @@ def convert_data_to_csv_2(data, csv_file_path):
             writer.writerow([])  # 空行分隔不同数据
 
     print(f"CSV 文件已保存至 {csv_file_path}")
+
+
+
+def chunk_array(arr, chunk_size=1000):
+    """
+    将数组按照每 chunk_size 个元素切割成若干个子数组
+
+    参数：
+    arr: 输入的数组
+    chunk_size: 每个子数组的大小，默认为1000
+
+    返回值：
+    chunks: 切割后的子数组列表
+    """
+    chunks = [arr[i:i + chunk_size] for i in range(0, len(arr), chunk_size)]
+    return chunks
+
+def overlap_chunks(arr, chunk_size=1000):
+    """
+    将数组按照重叠的方式切割成子数组
+
+    参数：
+    arr: 输入的数组
+    chunk_size: 每个子数组的大小，默认为1000
+
+    返回值：
+    chunks: 切割后的子数组列表
+    """
+    chunks = [arr[i:i + chunk_size] for i in range(len(arr) - chunk_size + 1)]
+    return chunks

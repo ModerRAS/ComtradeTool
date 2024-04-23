@@ -150,65 +150,6 @@ def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
 
-@jit
-def calculate_harmonic(voltage, harmonic_order, xx = 0, cyc_sample=100):
-    """
-    计算指定次谐波的有效值
-
-    参数：
-    voltage: 电压数组，普通数组
-    harmonic_order: 谐波次数，如2表示二次谐波，3表示三次谐波，以此类推
-    cyc_sample: 采样点数
-
-    返回值：
-    harmonic_rms: 指定次谐波的有效值
-    """
-    num10 = 0.0
-    num11 = 0.0
-    if (xx - (cyc_sample - 1)) < 0:
-        xx = cyc_sample - 1
-    for l in range(cyc_sample):
-        num12 = voltage[xx - l]
-        num10 += num12 * math.cos((float(harmonic_order) * -1.0 * float(l) * 2.0) * math.pi / cyc_sample)
-        num11 += num12 * math.sin((float(harmonic_order) * -1.0 * float(l) * 2.0) * math.pi / cyc_sample)
-    
-    num10 = num10 * math.sqrt(2.0) / float(cyc_sample)
-    num11 = num11 * math.sqrt(2.0) / float(cyc_sample)
-    abs = math.sqrt(num10 * num10 + num11 * num11)
-    deg = math.atan2(num10, num11) * 180.0 / math.pi
-    return abs
-
-
-
-
-def chunk_array(arr, chunk_size=1000):
-    """
-    将数组按照每 chunk_size 个元素切割成若干个子数组
-
-    参数：
-    arr: 输入的数组
-    chunk_size: 每个子数组的大小，默认为1000
-
-    返回值：
-    chunks: 切割后的子数组列表
-    """
-    chunks = [arr[i:i + chunk_size] for i in range(0, len(arr), chunk_size)]
-    return chunks
-
-def overlap_chunks(arr, chunk_size=1000):
-    """
-    将数组按照重叠的方式切割成子数组
-
-    参数：
-    arr: 输入的数组
-    chunk_size: 每个子数组的大小，默认为1000
-
-    返回值：
-    chunks: 切割后的子数组列表
-    """
-    chunks = [arr[i:i + chunk_size] for i in range(len(arr) - chunk_size + 1)]
-    return chunks
-
 if __name__ == '__main__':
     from pywebio.output import put_progressbar
     # find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
