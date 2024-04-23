@@ -1,5 +1,2 @@
 pywebio
-comtrade
 chardet
-numba
-simplejsonrpc
