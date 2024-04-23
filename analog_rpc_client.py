@@ -17,3 +17,7 @@ def get_analog_raw(filepath: str, use_analog_list: list[str]):
 def calculate_harmonic(voltage, harmonic_order, xx = 0, cyc_sample=100):
     proxy = xmlrpc.client.ServerProxy(rpc_server)
     return proxy.calculate_harmonic(base64.b64encode(pickle.dumps(voltage)).decode("utf-8"), harmonic_order, xx, cyc_sample)
+
+def get_max_harmonic(filepath: str):
+    proxy = xmlrpc.client.ServerProxy(rpc_server)
+    return pickle.loads(base64.b64decode(proxy.get_max_harmonic(filepath)))

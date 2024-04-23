@@ -4,7 +4,7 @@ import unittest
 
 from analog_rpc_client import get_analog_raw
 from analog_rpc_server import load_diagram
-from diagram import find_diagram
+from diagram import find_diagram, get_all_harmonic
 from analog_rpc_client import calculate_harmonic
 
 class TestDiagram(unittest.TestCase):
@@ -32,3 +32,8 @@ class TestDiagram(unittest.TestCase):
         end_time = time.time()
         elapsed_time = end_time - start_time
         print(f"计算所需的时间：{elapsed_time} 秒")
+    def test_get_all_harmonic(self):
+        start_time = time.time()
+        print(get_all_harmonic("testdata/04时54分09秒"))
+        end_time = time.time()
+        print(end_time - start_time)

@@ -1,9 +1,10 @@
 
 import time
 import os
+from joblib import Parallel, delayed
 
-from analog_rpc_client import get_analog_path_without_extension
-from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, save_to_csv
+from analog_rpc_client import get_analog_path_without_extension, get_max_harmonic
+from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, remove_all_extensions, save_to_csv
 from data import *
 from log import print_log
 
@@ -148,8 +149,29 @@ def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
 
+def get_all_harmonic(filepath: str):
+    """
+    all_harmonic:
+    [{"name": path_without_extension, "harmonic": get_max_harmonic(path_without_extension)}]
+    """
+    all_files = filter_files(filepath, ".cfg")
+
+    def _process_file(path_without_extension):
+        # path_without_extension = remove_all_extensions(file)
+        per_file_harmonic = get_max_harmonic(path_without_extension)
+        return {
+            "name": path_without_extension,
+            "harmonic": per_file_harmonic
+        }
+    # all_harmonic = Parallel(n_jobs=5, prefer="threads")(delayed(_process_file)(file) for file in all_files)
+    all_files = set(map(remove_all_extensions, all_files))
+    all_harmonic = [_process_file(file) for file in all_files]
+    return all_harmonic
+
+
+
 if __name__ == '__main__':
-    from pywebio.output import put_progressbar
-    # find_diagram(r"C:\WorkSpace\Recoder\20231006test", r"C:\tmp\text.csv")
-    put_progressbar("Progress", 0, "进度")
-    get_DC_field_analog_quantity(r"D:\WorkSpace\Python\ComtradeTool\testdata", r"C:\tmp\text4.csv")
+    start_time = time.time()
+    print(get_all_harmonic("testdata/04时54分09秒"))
+    end_time = time.time()
+    print(end_time - start_time)

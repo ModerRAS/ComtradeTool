@@ -1,9 +1,10 @@
 import base64
 import math
+import os
 import pickle
 from comtrade import Comtrade
 
-from util import get_max, overlap_chunks, transform
+from util import filter_files, get_max, overlap_chunks, transform
 
 from xmlrpc.server import SimpleXMLRPCServer
 
@@ -122,6 +123,7 @@ def calculate_harmonic(voltage, harmonic_order, xx = 0, cyc_sample=100):
     返回值：
     harmonic_rms: 指定次谐波的有效值
     """
+    cyc_sample = int(cyc_sample)
     num10 = 0.0
     num11 = 0.0
     if (xx - (cyc_sample - 1)) < 0:
@@ -140,15 +142,26 @@ def calculate_harmonic(voltage, harmonic_order, xx = 0, cyc_sample=100):
 
 
 def get_max_harmonic(filepath: str):
-    
+    """
+    获得一个文件中所有模拟量的所有所需要的谐波在这一分钟内的最大值
+    analog_harmonic:
+    [{
+      "name": analog_name, 
+      "time": analog_time, 
+      "total_harmonic": [{
+        "harmonic_order": 1..10, 
+        "harmonic": float
+        }]
+    }]
+    """
     analogs = get_all_analog_raw(filepath=filepath)
     analog_harmonic = []
     for analog in analogs:
         total_harmonic = []
-        cyc_sample = analog["sample_rates"][0][0] / analog["frequency"]
+        cyc_sample = int(analog["sample_rates"][0][0] / analog["frequency"])
         for harmonic_order in range(1, 11):
             harmonic = []
-            for xx in range(len(analog["value"])):
+            for xx in range(0, len(analog["value"]), cyc_sample):
                 harmonic.append(calculate_harmonic(analog["value"], harmonic_order, xx, cyc_sample))
             total_harmonic.append({
                 "harmonic_order": harmonic_order,
@@ -156,14 +169,19 @@ def get_max_harmonic(filepath: str):
             })
         analog_harmonic.append({
             "name": analog["name"],
+            "time": analog["time"],
             "total_harmonic": total_harmonic,
         })
+    return analog_harmonic
+
+def get_max_harmonic_rpc(filepath: str):
+    return base64.b64encode(pickle.dumps(get_max_harmonic(filepath))).decode("utf-8")
         
-                
 
 if __name__ == '__main__':
     server = SimpleXMLRPCServer(('0.0.0.0', 4242))
     server.register_function(get_analog_path_without_extension, 'get_analog_path_without_extension')
     server.register_function(get_analog_raw, 'get_analog_raw')
     server.register_function(calculate_harmonic_rpc, 'calculate_harmonic')
+    server.register_function(get_max_harmonic_rpc, 'get_max_harmonic')
     server.serve_forever()

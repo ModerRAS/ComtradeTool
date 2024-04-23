@@ -61,7 +61,7 @@ def transform(des_file, res_file):
             line = line.rstrip('\r\n')  # 去掉每一行后面的换行符和回车符
             file.write((line + '\n').encode('utf-8'))
 
-def filter_files(directory, keywords):
+def filter_files(directory, keywords) -> list[str]:
     files = []
     for root, _, filenames in os.walk(directory):
         for filename in filenames:
@@ -174,3 +174,9 @@ def overlap_chunks(arr, chunk_size=1000):
     """
     chunks = [arr[i:i + chunk_size] for i in range(len(arr) - chunk_size + 1)]
     return chunks
+
+def remove_all_extensions(file_path):
+    file_name, file_extension = os.path.splitext(file_path)
+    while '.' in file_name:
+        file_name, _ = os.path.splitext(file_name)
+    return file_name
