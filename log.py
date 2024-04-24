@@ -1,10 +1,11 @@
+import os
 from pywebio.output import *
 
-import sys
-
 def print_log(log_str: str, progress=-1.0):
-    # if 'unittest' in sys.modules.keys():
-    #     print("单元测试:{}, {}".format(log_str, __name__))
+    
+    if bool(os.getenv('unittest', "False")):
+        print(log_str)
+        return
     if progress>=0:
         set_progressbar("Progress", progress)
         print("{}, {}".format(log_str, progress))

@@ -45,6 +45,8 @@ jobs:
           pip install -r requirements.txt
           pip install -r requirements-reader.txt
       - name: Run Unit Test
+        env:
+          unittest : "True"
         run: |
           python analog_rpc_server.py &
           python -m unittest diagram_test
