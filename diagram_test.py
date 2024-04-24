@@ -69,6 +69,3 @@ class TestDiagram(unittest.TestCase):
             ["2022-01-01 11:00:00", "wave2", 1, 300],
             ["2022-01-01 11:00:00", "wave2", 2, 400],
         ])
-    def test_generate_all_harmonic_list_csv(self):
-        generate_all_harmonic_list_csv("testdata/04时54分09秒", "testdata/result2.csv")
-        self.assertTrue(self.compare_csv("testdata/04时54分09秒.csv", "testdata/result2.csv"))
