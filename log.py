@@ -3,7 +3,7 @@ from pywebio.output import *
 
 def print_log(log_str: str, progress=-1.0):
     
-    if bool(os.getenv('unittest', "False")):
+    if int(os.getenv('unittest', 0)) != 0:
         print(log_str)
         return
     if progress>=0:
