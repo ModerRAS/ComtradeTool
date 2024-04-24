@@ -2,8 +2,7 @@
 import csv
 import time
 import os
-from joblib import Parallel, delayed
-import multiprocessing
+import concurrent.futures
 from analog_rpc_client import get_analog_path_without_extension, get_max_harmonic
 from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, remove_all_extensions, save_to_csv
 from data import *
@@ -149,7 +148,6 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
 def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
-finished_number = 0
 def get_all_harmonic(filepath: str):
     """
     all_harmonic:
@@ -158,20 +156,26 @@ def get_all_harmonic(filepath: str):
     all_files = filter_files(filepath, ".cfg")
     all_files = set(map(remove_all_extensions, all_files))
     def _process_file(path_without_extension):
-        global finished_number
         # path_without_extension = remove_all_extensions(file)
         per_file_harmonic = get_max_harmonic(path_without_extension)
-        print_log(f"完成{path_without_extension}, 进度:{float(finished_number) / float(len(all_files))}", progress=(float(finished_number) / float(len(all_files))))
-        finished_number += 1
         return {
             "name": path_without_extension,
             "harmonic": per_file_harmonic
         }
-    
-    all_harmonic = Parallel(n_jobs=-1, prefer="threads")(delayed(_process_file)(file) for file in all_files)
-    # all_harmonic = [_process_file(file) for file in all_files]
-    global finished_number
-    finished_number = 0
+    all_harmonic = []
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+        futures = {executor.submit(_process_file, file): file for file in all_files}
+        for future in concurrent.futures.as_completed(futures):
+            file = futures[future]
+            try:
+                data = future.result()
+            except Exception as exc:
+                print_log(f"处理{file}时发生异常: {exc}")
+            else:
+                all_harmonic.append(data)
+                print_log("", float(len(all_harmonic) / float(len(all_files))))
+
     return all_harmonic
 
 def generate_all_harmonic_list(all_harmonic: list):

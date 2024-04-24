@@ -13,6 +13,7 @@ from pywebio.session import go_app
 
 from diagram import find_diagram, find_diagram_hlb2, generate_all_harmonic_list_csv, get_DC_field_analog_quantity, get_hlb1_analog_quantity
 from build_time import *
+from log import print_log
 
 def create_directory_if_not_exists(directory):
     if not os.path.exists(directory):
@@ -65,6 +66,7 @@ def manual_upload_process(process_func=find_diagram):
     file_selected = select("选择文件", file_list)
     start_time = time.time()
     put_progressbar("Progress", 0, "进度")
+    print_log("开始", 0.01)
     random_name = generate_random_string(10)
     unzip_file('/tmp/upload/'+ file_selected, '/tmp/'+ random_name)
     process_func('/tmp/'+ random_name, csv_path='/tmp/'+ random_name + ".csv")

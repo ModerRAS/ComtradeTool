@@ -1,4 +1,2 @@
 pywebio
 chardet
-matplotlib
-joblib
