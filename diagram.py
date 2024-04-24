@@ -156,16 +156,18 @@ def get_all_harmonic(filepath: str):
     [{"name": path_without_extension, "harmonic": get_max_harmonic(path_without_extension)}]
     """
     all_files = filter_files(filepath, ".cfg")
-
+    finished_number = 0
+    all_files = set(map(remove_all_extensions, all_files))
     def _process_file(path_without_extension):
         # path_without_extension = remove_all_extensions(file)
         per_file_harmonic = get_max_harmonic(path_without_extension)
+        print_log(f"完成{path_without_extension}, 进度:{float(finished_number) / float(len(all_files))}", progress=(float(finished_number) / float(len(all_files))))
+        finished_number += 1
         return {
             "name": path_without_extension,
             "harmonic": per_file_harmonic
         }
     
-    all_files = set(map(remove_all_extensions, all_files))
     all_harmonic = Parallel(n_jobs=-1, prefer="threads")(delayed(_process_file)(file) for file in all_files)
     # all_harmonic = [_process_file(file) for file in all_files]
     return all_harmonic
@@ -192,7 +194,7 @@ def generate_all_harmonic_list(all_harmonic: list):
                     harmonic_order,
                     harmonic_value
                 ])
-        print_log(f"{harmonic['name']} 完成, 进度：{float(index + 1) / float(harmonic_count)}", progress=(float(index + 1) / float(harmonic_count)))
+        
     return all_harmonic_list
 
 def generate_all_harmonic_list_csv(filepath: str, csv_path: str):
@@ -207,6 +209,7 @@ def generate_all_harmonic_list_csv(filepath: str, csv_path: str):
         writer = csv.writer(csvfile)
         writer.writerow(["时间", "波形名称", "谐波次数", "谐波值"])
         writer.writerows(all_harmonic_list)
+    print_log("完成", progress=1)
 
 if __name__ == '__main__':
     start_time = time.time()
