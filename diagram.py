@@ -163,18 +163,33 @@ def get_all_harmonic(filepath: str):
             "name": path_without_extension,
             "harmonic": per_file_harmonic
         }
-    # all_harmonic = Parallel(n_jobs=5, prefer="threads")(delayed(_process_file)(file) for file in all_files)
+    
     all_files = set(map(remove_all_extensions, all_files))
-    all_harmonic = [_process_file(file) for file in all_files]
+    all_harmonic = Parallel(n_jobs=5, prefer="threads")(delayed(_process_file)(file) for file in all_files)
+    # all_harmonic = [_process_file(file) for file in all_files]
     return all_harmonic
 
 def generate_all_harmonic_list(all_harmonic: list):
     """
     export object type:
-    [fmttime, wave_name, number_1..9_of_harmonic]
+    [[fmttime, wave_name, harmonic_order, harmonic], ]
     """
-    
-    pass
+    all_harmonic_list = []
+    for harmonic in all_harmonic:
+        # get harmonic
+        harmonic_data = harmonic["harmonic"]
+        name = harmonic_data["name"]
+        harmonic_time = harmonic_data["time"].strftime("%Y-%m-%d %H:%M:%S")
+        for harmonic_index in harmonic_data["total_harmonic"]:
+            harmonic_order = harmonic_index["harmonic_order"]
+            harmonic_value = harmonic_index["harmonic"]
+            all_harmonic_list.append([
+                harmonic_time,
+                name,
+                harmonic_order,
+                harmonic_value
+            ])
+    return all_harmonic_list
 
 
 if __name__ == '__main__':
