@@ -1,4 +1,5 @@
 
+import csv
 import time
 import os
 from joblib import Parallel, delayed
@@ -175,25 +176,40 @@ def generate_all_harmonic_list(all_harmonic: list):
     [[fmttime, wave_name, harmonic_order, harmonic], ]
     """
     all_harmonic_list = []
-    for harmonic in all_harmonic:
+    harmonic_count = len(all_harmonic)
+    for index, harmonic in enumerate(all_harmonic):
         # get harmonic
         harmonic_data = harmonic["harmonic"]
-        name = harmonic_data["name"]
-        harmonic_time = harmonic_data["time"].strftime("%Y-%m-%d %H:%M:%S")
-        for harmonic_index in harmonic_data["total_harmonic"]:
-            harmonic_order = harmonic_index["harmonic_order"]
-            harmonic_value = harmonic_index["harmonic"]
-            all_harmonic_list.append([
-                harmonic_time,
-                name,
-                harmonic_order,
-                harmonic_value
-            ])
+        for per_harmonic_data in harmonic_data:
+            name = per_harmonic_data["name"]
+            harmonic_time = per_harmonic_data["time"].strftime("%Y-%m-%d %H:%M:%S")
+            for harmonic_index in per_harmonic_data["total_harmonic"]:
+                harmonic_order = harmonic_index["harmonic_order"]
+                harmonic_value = harmonic_index["harmonic"]
+                all_harmonic_list.append([
+                    harmonic_time,
+                    name,
+                    harmonic_order,
+                    harmonic_value
+                ])
+        print_log(f"{harmonic['name']} 完成, 进度：{float(index + 1) / float(harmonic_count)}", progress=(float(index + 1) / float(harmonic_count)))
     return all_harmonic_list
 
+def generate_all_harmonic_list_csv(filepath: str, csv_path: str):
+    """
+    export object type:
+    [[fmttime, wave_name, harmonic_order, harmonic], ]
+    """
+    all_harmonic = get_all_harmonic(filepath)
+    all_harmonic_list = generate_all_harmonic_list(all_harmonic)
+    # 按照列表文件生成csv
+    with open(csv_path, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["时间", "波形名称", "谐波次数", "谐波值"])
+        writer.writerows(all_harmonic_list)
 
 if __name__ == '__main__':
     start_time = time.time()
-    print(get_all_harmonic("testdata/04时54分09秒"))
+    print(generate_all_harmonic_list_csv("testdata/04时54分09秒", "testdata/04时54分09秒.csv"))
     end_time = time.time()
     print(end_time - start_time)
