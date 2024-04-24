@@ -37,6 +37,38 @@ def delete_file_or_folder(path):
     else:
         print(f'路径 {path} 不是有效的文件或文件夹路径。')
 
+
+def list_files_in_folder(folder_path):
+    """
+    列出文件夹中的所有文件。
+
+    参数：
+    folder_path (str): 要列出文件的文件夹路径。
+
+    返回：
+    list: 包含文件名的列表。
+    """
+    files_and_folders = os.listdir(folder_path)
+    files = [f for f in files_and_folders if os.path.isfile(os.path.join(folder_path, f))]
+    return files
+
+def manual_upload_process(process_func=find_diagram):
+    file_list = list_files_in_folder("/tmp/upload")
+    file_selected = select("选择文件", file_list)
+    start_time = time.time()
+    put_progressbar("Progress", 0, "进度")
+    random_name = generate_random_string(10)
+    unzip_file('/tmp/upload/'+ file_selected, '/tmp/'+ random_name)
+    process_func('/tmp/'+ random_name, csv_path='/tmp/'+ random_name + ".csv")
+    content = open('/tmp/'+ random_name + ".csv", 'rb').read()
+    put_markdown("清理临时文件")
+    delete_file_or_folder('/tmp/'+ random_name)
+    delete_file_or_folder('/tmp/'+ random_name + ".csv")
+    end_time = time.time()
+    # 计算时间差
+    elapsed_time = end_time - start_time
+    put_markdown(f"程序运行时间为：{elapsed_time} 秒")
+    return content
 def process_content(process_func=find_diagram):
     f = file_upload("上传波形文件压缩包", accept="application/zip")
     start_time = time.time()
@@ -129,7 +161,7 @@ def 换流变谐波分析():
 文件夹层级任意
     """))
 
-    content = process_content(generate_all_harmonic_list_csv)
+    content = manual_upload_process(generate_all_harmonic_list_csv)
     put_file("换流变谐波分析{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
 
 

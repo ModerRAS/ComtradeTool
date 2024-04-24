@@ -34,3 +34,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/.docker/config.json:/config.json
     command: --interval 300
+  dufs:
+    restart: always
+    image: sigoden/dufs
+    command: /tmp/upload -p 80 -A -a USERNAME:PASSWORD@/:rw
+    volumes:
+      - ./tmp:/tmp
+    ports:
+      - "23081:80"
