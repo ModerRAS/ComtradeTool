@@ -2,9 +2,9 @@
 import csv
 import time
 import os
-import concurrent.futures
+
 from analog_rpc_client import get_analog_path_without_extension, get_max_harmonic
-from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, remove_all_extensions, save_to_csv
+from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, parallel_process, remove_all_extensions, save_to_csv
 from data import *
 from log import print_log
 
@@ -162,22 +162,10 @@ def get_all_harmonic(filepath: str):
             "name": path_without_extension,
             "harmonic": per_file_harmonic
         }
-    all_harmonic = []
-
-    num_cpus = os.cpu_count()  # 获取 CPU 核心数
-    with concurrent.futures.ThreadPoolExecutor(max_workers=num_cpus) as executor:
-        futures = {executor.submit(_process_file, file): file for file in all_files}
-        for future in concurrent.futures.as_completed(futures):
-            file = futures[future]
-            try:
-                data = future.result()
-            except Exception as exc:
-                print_log(f"处理{file}时发生异常: {exc}")
-            else:
-                all_harmonic.append(data)
-                print_log("", float(len(all_harmonic) / float(len(all_files))))
-
+    all_harmonic = parallel_process(_process_file, all_files, print_log)
     return all_harmonic
+
+
 
 def generate_all_harmonic_list(all_harmonic: list):
     """

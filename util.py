@@ -1,7 +1,23 @@
 import csv
 import os
 import chardet
+import concurrent.futures
 
+def parallel_process(_process_file, all_files, progress_printer):
+    result_data = []
+    num_cpus = os.cpu_count()  # 获取 CPU 核心数
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_cpus) as executor:
+        futures = {executor.submit(_process_file, file): file for file in all_files}
+        for future in concurrent.futures.as_completed(futures):
+            file = futures[future]
+            try:
+                data = future.result()
+            except Exception as exc:
+                progress_printer(f"处理{file}时发生异常: {exc}")
+            else:
+                result_data.append(data)
+                progress_printer("", float(len(result_data) / float(len(all_files))))
+    return result_data
 
 
 def get_filename_keyword_with_pole(name: str):
