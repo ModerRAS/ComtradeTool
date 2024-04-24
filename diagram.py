@@ -164,7 +164,8 @@ def get_all_harmonic(filepath: str):
         }
     all_harmonic = []
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+    num_cpus = os.cpu_count()  # 获取 CPU 核心数
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_cpus) as executor:
         futures = {executor.submit(_process_file, file): file for file in all_files}
         for future in concurrent.futures.as_completed(futures):
             file = futures[future]
