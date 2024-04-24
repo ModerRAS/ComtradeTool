@@ -175,4 +175,4 @@ def index():
     put_markdown("构建于{}".format(formatted_time))
 
 if __name__ == '__main__':
-    start_server([index,小定值零飘检查, 模拟量检查, 换流变1模拟量检查, 换流变2模拟量检查, 换流变谐波分析], debug=True, port=23080, cdn=False, max_payload_size='20G')
+    start_server([index,小定值零飘检查, 模拟量检查, 换流变1模拟量检查, 换流变2模拟量检查, 换流变谐波分析], debug=True, port=23080, cdn=False, max_payload_size='500M')
