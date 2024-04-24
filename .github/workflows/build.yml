@@ -48,6 +48,7 @@ jobs:
         run: |
           python analog_rpc_server.py &
           python -m unittest diagram_test
+          python -m unittest util_test
       - name: Delete Test Files
         run: |
           rm -rf testdata
