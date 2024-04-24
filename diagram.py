@@ -203,7 +203,7 @@ def generate_all_harmonic_list_csv(filepath: str, csv_path: str):
     all_harmonic = get_all_harmonic(filepath)
     all_harmonic_list = generate_all_harmonic_list(all_harmonic)
     # 按照列表文件生成csv
-    with open(csv_path, "w", newline="") as csvfile:
+    with open(csv_path, "w", encoding='gbk', newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["时间", "波形名称", "谐波次数", "谐波值"])
         writer.writerows(all_harmonic_list)
