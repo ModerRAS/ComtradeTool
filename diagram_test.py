@@ -4,7 +4,7 @@ import time
 import unittest
 
 from analog_rpc_client import get_analog_raw
-from diagram import find_diagram, generate_all_harmonic_list, get_all_harmonic
+from diagram import find_diagram, generate_all_harmonic_list, generate_all_harmonic_list_csv, get_all_harmonic
 from analog_rpc_client import calculate_harmonic
 
 class TestDiagram(unittest.TestCase):
@@ -67,3 +67,6 @@ class TestDiagram(unittest.TestCase):
             ["2022-01-01 11:00:00", "wave2", 1, 300],
             ["2022-01-01 11:00:00", "wave2", 2, 400],
         ])
+    def test_generate_all_harmonic_list_csv(self):
+        generate_all_harmonic_list_csv("testdata/04时54分09秒", "testdata/result2.csv")
+        self.assertTrue(self.compare_csv("testdata/04时54分09秒.csv", "testdata/result2.csv"))
