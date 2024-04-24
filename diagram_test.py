@@ -40,24 +40,26 @@ class TestDiagram(unittest.TestCase):
     def test_generate_all_harmonic_list(self):
         test_data = [
             {
-                "harmonic": {
+                "name": "wavefile1",
+                "harmonic": [{
                     "name": "wave1",
                     "time": datetime(2022, 1, 1, 10, 0, 0),
                     "total_harmonic": [
                         {"harmonic_order": 1, "harmonic": 100},
                         {"harmonic_order": 2, "harmonic": 200},
                     ],
-                }
+                }, ]
             },
             {
-                "harmonic": {
+                "name": "wavefile2",
+                "harmonic": [{
                     "name": "wave2",
                     "time": datetime(2022, 1, 1, 11, 0, 0),
                     "total_harmonic": [
                         {"harmonic_order": 1, "harmonic": 300},
                         {"harmonic_order": 2, "harmonic": 400},
                     ],
-                }
+                }, ]
             },
         ]
         result = generate_all_harmonic_list(test_data)
