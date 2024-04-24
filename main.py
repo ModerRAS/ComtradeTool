@@ -14,6 +14,14 @@ from pywebio.session import go_app
 from diagram import find_diagram, find_diagram_hlb2, generate_all_harmonic_list_csv, get_DC_field_analog_quantity, get_hlb1_analog_quantity
 from build_time import *
 
+def create_directory_if_not_exists(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        print(f"Directory '{directory}' created.")
+    else:
+        print(f"Directory '{directory}' already exists.")
+
+
 def unzip_file(zip_file_path, extract_to_folder):
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to_folder)
@@ -175,4 +183,5 @@ def index():
     put_markdown("构建于{}".format(formatted_time))
 
 if __name__ == '__main__':
+    create_directory_if_not_exists("/tmp/upload")
     start_server([index,小定值零飘检查, 模拟量检查, 换流变1模拟量检查, 换流变2模拟量检查, 换流变谐波分析], debug=True, port=23080, cdn=False, max_payload_size='500M')

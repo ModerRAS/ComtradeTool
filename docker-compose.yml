@@ -19,6 +19,8 @@ services:
       - "--entrypoints.tcp.address=:4242"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    depends_on:
+      - analogreader
   comtradetool:
     restart: always
     image: ghcr.io/moderras/comtradetool:master
@@ -28,6 +30,9 @@ services:
       - ./tmp:/tmp
     ports:
       - "23080:23080"
+    depends_on:
+      - traefik
+
   watchtower:
     image: containrrr/watchtower
     volumes:
@@ -42,3 +47,5 @@ services:
       - ./tmp:/tmp
     ports:
       - "23081:80"
+    depends_on:
+      - comtradetool
