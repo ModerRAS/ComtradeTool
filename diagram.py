@@ -149,16 +149,16 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
 def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
-
+finished_number = 0
 def get_all_harmonic(filepath: str):
     """
     all_harmonic:
     [{"name": path_without_extension, "harmonic": get_max_harmonic(path_without_extension)}]
     """
     all_files = filter_files(filepath, ".cfg")
-    finished_number = 0
     all_files = set(map(remove_all_extensions, all_files))
     def _process_file(path_without_extension):
+        global finished_number
         # path_without_extension = remove_all_extensions(file)
         per_file_harmonic = get_max_harmonic(path_without_extension)
         print_log(f"完成{path_without_extension}, 进度:{float(finished_number) / float(len(all_files))}", progress=(float(finished_number) / float(len(all_files))))
@@ -170,6 +170,8 @@ def get_all_harmonic(filepath: str):
     
     all_harmonic = Parallel(n_jobs=-1, prefer="threads")(delayed(_process_file)(file) for file in all_files)
     # all_harmonic = [_process_file(file) for file in all_files]
+    global finished_number
+    finished_number = 0
     return all_harmonic
 
 def generate_all_harmonic_list(all_harmonic: list):
