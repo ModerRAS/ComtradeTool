@@ -1,10 +1,10 @@
 import csv
+from datetime import datetime
 import time
 import unittest
 
 from analog_rpc_client import get_analog_raw
-from analog_rpc_server import load_diagram
-from diagram import find_diagram, get_all_harmonic
+from diagram import find_diagram, generate_all_harmonic_list, get_all_harmonic
 from analog_rpc_client import calculate_harmonic
 
 class TestDiagram(unittest.TestCase):
@@ -37,3 +37,33 @@ class TestDiagram(unittest.TestCase):
         print(get_all_harmonic("testdata/04时54分09秒"))
         end_time = time.time()
         print(end_time - start_time)
+    def test_generate_all_harmonic_list(self):
+        test_data = [
+            {
+                "harmonic": {
+                    "name": "wave1",
+                    "time": datetime(2022, 1, 1, 10, 0, 0),
+                    "total_harmonic": [
+                        {"harmonic_order": 1, "harmonic": 100},
+                        {"harmonic_order": 2, "harmonic": 200},
+                    ],
+                }
+            },
+            {
+                "harmonic": {
+                    "name": "wave2",
+                    "time": datetime(2022, 1, 1, 11, 0, 0),
+                    "total_harmonic": [
+                        {"harmonic_order": 1, "harmonic": 300},
+                        {"harmonic_order": 2, "harmonic": 400},
+                    ],
+                }
+            },
+        ]
+        result = generate_all_harmonic_list(test_data)
+        self.assertEqual(result, [
+            ["2022-01-01 10:00:00", "wave1", 1, 100],
+            ["2022-01-01 10:00:00", "wave1", 2, 200],
+            ["2022-01-01 11:00:00", "wave2", 1, 300],
+            ["2022-01-01 11:00:00", "wave2", 2, 400],
+        ])
