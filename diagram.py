@@ -3,7 +3,7 @@ import csv
 import time
 import os
 from joblib import Parallel, delayed
-
+import multiprocessing
 from analog_rpc_client import get_analog_path_without_extension, get_max_harmonic
 from util import convert_data_to_csv_style, filter_files, get_filename_keyword, get_filename_keyword_with_pole, remove_all_extensions, save_to_csv
 from data import *
@@ -166,7 +166,7 @@ def get_all_harmonic(filepath: str):
         }
     
     all_files = set(map(remove_all_extensions, all_files))
-    all_harmonic = Parallel(n_jobs=5, prefer="threads")(delayed(_process_file)(file) for file in all_files)
+    all_harmonic = Parallel(n_jobs=-1, prefer="threads")(delayed(_process_file)(file) for file in all_files)
     # all_harmonic = [_process_file(file) for file in all_files]
     return all_harmonic
 
