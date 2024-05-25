@@ -6,7 +6,7 @@ from comtrade import Comtrade
 import numpy as np
 from scipy.fftpack import fft, fftfreq
 
-from util import filter_files, get_max, overlap_chunks, transform
+from util import chunk_array, filter_files, get_max, overlap_chunks, transform
 
 from xmlrpc.server import SimpleXMLRPCServer
 
@@ -203,7 +203,9 @@ def get_max_harmonic(filepath: str, fft=False):
             harmonic = []
             for xx in range(0, len(analog["value"]), cyc_sample):
                 if fft:
-                    harmonic.append(calculate_harmonic_fft(analog["value"], harmonic_order, analog["frequency"], analog["sample_rates"][0][0]))
+                    chunk_list = chunk_array(analog["value"], cyc_sample)
+                    harmonic_fft = get_max([calculate_harmonic_fft(i, harmonic_order, analog["frequency"], analog["sample_rates"][0][0]) for i in chunk_list])
+                    harmonic.append(harmonic_fft)
                 else:
                     harmonic.append(calculate_harmonic(analog["value"], harmonic_order, xx, cyc_sample))
             total_harmonic.append({
