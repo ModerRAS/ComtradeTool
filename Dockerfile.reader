@@ -1,5 +1,5 @@
 # 使用官方的 Python 镜像作为基础镜像
-FROM pypy:3.10-7.3.15-bookworm
+FROM python:3.10
 
 # 设置工作目录
 WORKDIR /app
