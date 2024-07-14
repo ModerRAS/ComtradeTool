@@ -1161,7 +1161,7 @@
     },
     {
         "display_name": "IVD1_L1",
-        "data_names": ["IVD1_L1", ],
+        "data_names": ["IVD1_L1", "IVD_L1"],
         "Child": "Child0",
         "From": [
             "P1CCP1A",
@@ -1188,7 +1188,7 @@
     },
     {
         "display_name": "IVD1_L2",
-        "data_names": ["IVD1_L2", ],
+        "data_names": ["IVD1_L2", "IVD_L2"],
         "Child": "Child0",
         "From": [
             "P1CCP1A",
@@ -1215,7 +1215,7 @@
     },
     {
         "display_name": "IVD1_L3",
-        "data_names": ["IVD1_L3", ],
+        "data_names": ["IVD1_L3", "IVD_L3"],
         "Child": "Child0",
         "From": [
             "P1CCP1A",
