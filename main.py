@@ -181,6 +181,7 @@ def index():
     put_buttons(['点击进入小定值零飘检查（月度）'], [lambda: go_app('小定值零飘检查', new_window=False)])
     put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('模拟量检查', new_window=False)])
     put_buttons(['点击进入换流变1模拟量检查（季度）'], [lambda: go_app('换流变1模拟量检查', new_window=False)])
+    put_buttons(['点击进入换流变2模拟量检查（季度）'], [lambda: go_app('换流变2模拟量检查', new_window=False)])
     put_buttons(['点击进入换流变谐波分析'], [lambda: go_app('换流变谐波分析', new_window=False)])
     put_markdown("构建于{}".format(formatted_time))
 
