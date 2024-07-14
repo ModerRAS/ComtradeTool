@@ -171,25 +171,8 @@ def 换流变谐波分析():
 文件夹层级任意
     """))
 
-    content = manual_upload_process(generate_all_harmonic_list_csv(False))
+    content = manual_upload_process(generate_all_harmonic_list_csv)
     put_file("换流变谐波分析{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
-
-
-def 换流变谐波分析_fft():
-    """分析波形的简单应用
-    """
-
-    put_markdown(t("""
-    """, """
-# 换流变谐波分析工具傅立叶变换版
-用于自动生成换流变谐波分析所需要的表格文件
-将下载的外置录波谱图文件夹打包成zip文件，然后上传，请勿更改谱图文件名
-文件夹层级任意
-    """))
-
-    content = manual_upload_process(generate_all_harmonic_list_csv(True))
-    put_file("换流变谐波分析{}.csv".format(time.strftime("%Y-%m")), content, '点击下载CSV文件')
-
 
 
 
@@ -199,9 +182,8 @@ def index():
     put_buttons(['点击进入模拟量检查（季度）'], [lambda: go_app('模拟量检查', new_window=False)])
     put_buttons(['点击进入换流变1模拟量检查（季度）'], [lambda: go_app('换流变1模拟量检查', new_window=False)])
     put_buttons(['点击进入换流变谐波分析'], [lambda: go_app('换流变谐波分析', new_window=False)])
-    put_buttons(['点击进入换流变谐波分析傅立叶变换版'], [lambda: go_app('换流变谐波分析_fft', new_window=False)])
     put_markdown("构建于{}".format(formatted_time))
 
 if __name__ == '__main__':
     create_directory_if_not_exists("/tmp/upload")
-    start_server([index,小定值零飘检查, 模拟量检查, 换流变1模拟量检查, 换流变2模拟量检查, 换流变谐波分析, 换流变谐波分析_fft], debug=True, port=23080, cdn=False, max_payload_size='500M')
+    start_server([index,小定值零飘检查, 模拟量检查, 换流变1模拟量检查, 换流变2模拟量检查, 换流变谐波分析], debug=True, port=23080, cdn=False, max_payload_size='500M')

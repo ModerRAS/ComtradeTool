@@ -1,4 +1,2 @@
 comtrade
 chardet
-numpy
-scipy

@@ -148,7 +148,7 @@ def get_DC_field_analog_quantity(filepath: str, csv_path: str):
 def get_hlb1_analog_quantity(filepath: str, csv_path: str):
     get_analog_quantity(filepath, csv_path)(换流变1字段, 换流变1总模拟量, "换流变1总模拟量")
 
-def get_all_harmonic(filepath: str, fft=False):
+def get_all_harmonic(filepath: str):
     """
     all_harmonic:
     [{"name": path_without_extension, "harmonic": get_max_harmonic(path_without_extension)}]
@@ -157,7 +157,7 @@ def get_all_harmonic(filepath: str, fft=False):
     all_files = set(map(remove_all_extensions, all_files))
     def _process_file(path_without_extension):
         # path_without_extension = remove_all_extensions(file)
-        per_file_harmonic = get_max_harmonic(path_without_extension, fft)
+        per_file_harmonic = get_max_harmonic(path_without_extension)
         return {
             "name": path_without_extension,
             "harmonic": per_file_harmonic
@@ -192,22 +192,19 @@ def generate_all_harmonic_list(all_harmonic: list):
         
     return all_harmonic_list
 
-def generate_all_harmonic_list_csv(fft=False):
-    def _generate_all_harmonic_list_csv(filepath: str, csv_path: str):
-        """
-        export object type:
-        [[fmttime, wave_name, harmonic_order, harmonic], ]
-        """
-        all_harmonic = get_all_harmonic(filepath, fft)
-        all_harmonic_list = generate_all_harmonic_list(all_harmonic)
-        # 按照列表文件生成csv
-        with open(csv_path, "w", encoding='gbk', newline="") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(["时间", "波形名称", "谐波次数", "谐波值"])
-            writer.writerows(all_harmonic_list)
-        print_log("完成", progress=1)
-    return _generate_all_harmonic_list_csv
-
+def generate_all_harmonic_list_csv(filepath: str, csv_path: str):
+    """
+    export object type:
+    [[fmttime, wave_name, harmonic_order, harmonic], ]
+    """
+    all_harmonic = get_all_harmonic(filepath)
+    all_harmonic_list = generate_all_harmonic_list(all_harmonic)
+    # 按照列表文件生成csv
+    with open(csv_path, "w", encoding='gbk', newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["时间", "波形名称", "谐波次数", "谐波值"])
+        writer.writerows(all_harmonic_list)
+    print_log("完成", progress=1)
 
 if __name__ == '__main__':
     start_time = time.time()
